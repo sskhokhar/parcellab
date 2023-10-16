@@ -6,20 +6,21 @@ import { Type } from 'class-transformer';
 
 @InputType()
 export class ShipmentUncheckedUpdateWithoutSenderAddressInput {
+  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+  id?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    id?: StringFieldUpdateOperationsInput;
+  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+  trackingNumber?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    trackingNumber?: StringFieldUpdateOperationsInput;
+  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+  carrier?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    carrier?: StringFieldUpdateOperationsInput;
+  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+  receiverAddressId?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    receiverAddressId?: StringFieldUpdateOperationsInput;
-
-    @Field(() => ArticleOnShipmentUncheckedUpdateManyWithoutShipmentNestedInput, {nullable:true})
-    @Type(() => ArticleOnShipmentUncheckedUpdateManyWithoutShipmentNestedInput)
-    articles?: ArticleOnShipmentUncheckedUpdateManyWithoutShipmentNestedInput;
+  @Field(() => ArticleOnShipmentUncheckedUpdateManyWithoutShipmentNestedInput, {
+    nullable: true,
+  })
+  @Type(() => ArticleOnShipmentUncheckedUpdateManyWithoutShipmentNestedInput)
+  articles?: ArticleOnShipmentUncheckedUpdateManyWithoutShipmentNestedInput;
 }

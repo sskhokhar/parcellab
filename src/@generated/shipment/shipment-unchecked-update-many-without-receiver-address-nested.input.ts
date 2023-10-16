@@ -12,44 +12,59 @@ import { ShipmentScalarWhereInput } from './shipment-scalar-where.input';
 
 @InputType()
 export class ShipmentUncheckedUpdateManyWithoutReceiverAddressNestedInput {
+  @Field(() => [ShipmentCreateWithoutReceiverAddressInput], { nullable: true })
+  @Type(() => ShipmentCreateWithoutReceiverAddressInput)
+  create?: Array<ShipmentCreateWithoutReceiverAddressInput>;
 
-    @Field(() => [ShipmentCreateWithoutReceiverAddressInput], {nullable:true})
-    @Type(() => ShipmentCreateWithoutReceiverAddressInput)
-    create?: Array<ShipmentCreateWithoutReceiverAddressInput>;
+  @Field(() => [ShipmentCreateOrConnectWithoutReceiverAddressInput], {
+    nullable: true,
+  })
+  @Type(() => ShipmentCreateOrConnectWithoutReceiverAddressInput)
+  connectOrCreate?: Array<ShipmentCreateOrConnectWithoutReceiverAddressInput>;
 
-    @Field(() => [ShipmentCreateOrConnectWithoutReceiverAddressInput], {nullable:true})
-    @Type(() => ShipmentCreateOrConnectWithoutReceiverAddressInput)
-    connectOrCreate?: Array<ShipmentCreateOrConnectWithoutReceiverAddressInput>;
+  @Field(() => [ShipmentUpsertWithWhereUniqueWithoutReceiverAddressInput], {
+    nullable: true,
+  })
+  @Type(() => ShipmentUpsertWithWhereUniqueWithoutReceiverAddressInput)
+  upsert?: Array<ShipmentUpsertWithWhereUniqueWithoutReceiverAddressInput>;
 
-    @Field(() => [ShipmentUpsertWithWhereUniqueWithoutReceiverAddressInput], {nullable:true})
-    @Type(() => ShipmentUpsertWithWhereUniqueWithoutReceiverAddressInput)
-    upsert?: Array<ShipmentUpsertWithWhereUniqueWithoutReceiverAddressInput>;
+  @Field(() => [ShipmentWhereUniqueInput], { nullable: true })
+  @Type(() => ShipmentWhereUniqueInput)
+  set?: Array<
+    Prisma.AtLeast<ShipmentWhereUniqueInput, 'id' | 'trackingNumber'>
+  >;
 
-    @Field(() => [ShipmentWhereUniqueInput], {nullable:true})
-    @Type(() => ShipmentWhereUniqueInput)
-    set?: Array<Prisma.AtLeast<ShipmentWhereUniqueInput, 'id' | 'trackingNumber'>>;
+  @Field(() => [ShipmentWhereUniqueInput], { nullable: true })
+  @Type(() => ShipmentWhereUniqueInput)
+  disconnect?: Array<
+    Prisma.AtLeast<ShipmentWhereUniqueInput, 'id' | 'trackingNumber'>
+  >;
 
-    @Field(() => [ShipmentWhereUniqueInput], {nullable:true})
-    @Type(() => ShipmentWhereUniqueInput)
-    disconnect?: Array<Prisma.AtLeast<ShipmentWhereUniqueInput, 'id' | 'trackingNumber'>>;
+  @Field(() => [ShipmentWhereUniqueInput], { nullable: true })
+  @Type(() => ShipmentWhereUniqueInput)
+  delete?: Array<
+    Prisma.AtLeast<ShipmentWhereUniqueInput, 'id' | 'trackingNumber'>
+  >;
 
-    @Field(() => [ShipmentWhereUniqueInput], {nullable:true})
-    @Type(() => ShipmentWhereUniqueInput)
-    delete?: Array<Prisma.AtLeast<ShipmentWhereUniqueInput, 'id' | 'trackingNumber'>>;
+  @Field(() => [ShipmentWhereUniqueInput], { nullable: true })
+  @Type(() => ShipmentWhereUniqueInput)
+  connect?: Array<
+    Prisma.AtLeast<ShipmentWhereUniqueInput, 'id' | 'trackingNumber'>
+  >;
 
-    @Field(() => [ShipmentWhereUniqueInput], {nullable:true})
-    @Type(() => ShipmentWhereUniqueInput)
-    connect?: Array<Prisma.AtLeast<ShipmentWhereUniqueInput, 'id' | 'trackingNumber'>>;
+  @Field(() => [ShipmentUpdateWithWhereUniqueWithoutReceiverAddressInput], {
+    nullable: true,
+  })
+  @Type(() => ShipmentUpdateWithWhereUniqueWithoutReceiverAddressInput)
+  update?: Array<ShipmentUpdateWithWhereUniqueWithoutReceiverAddressInput>;
 
-    @Field(() => [ShipmentUpdateWithWhereUniqueWithoutReceiverAddressInput], {nullable:true})
-    @Type(() => ShipmentUpdateWithWhereUniqueWithoutReceiverAddressInput)
-    update?: Array<ShipmentUpdateWithWhereUniqueWithoutReceiverAddressInput>;
+  @Field(() => [ShipmentUpdateManyWithWhereWithoutReceiverAddressInput], {
+    nullable: true,
+  })
+  @Type(() => ShipmentUpdateManyWithWhereWithoutReceiverAddressInput)
+  updateMany?: Array<ShipmentUpdateManyWithWhereWithoutReceiverAddressInput>;
 
-    @Field(() => [ShipmentUpdateManyWithWhereWithoutReceiverAddressInput], {nullable:true})
-    @Type(() => ShipmentUpdateManyWithWhereWithoutReceiverAddressInput)
-    updateMany?: Array<ShipmentUpdateManyWithWhereWithoutReceiverAddressInput>;
-
-    @Field(() => [ShipmentScalarWhereInput], {nullable:true})
-    @Type(() => ShipmentScalarWhereInput)
-    deleteMany?: Array<ShipmentScalarWhereInput>;
+  @Field(() => [ShipmentScalarWhereInput], { nullable: true })
+  @Type(() => ShipmentScalarWhereInput)
+  deleteMany?: Array<ShipmentScalarWhereInput>;
 }

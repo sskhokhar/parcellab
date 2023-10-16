@@ -5,8 +5,7 @@ import { Type } from 'class-transformer';
 
 @ArgsType()
 export class DeleteManyAddressArgs {
-
-    @Field(() => AddressWhereInput, {nullable:true})
-    @Type(() => AddressWhereInput)
-    where?: AddressWhereInput;
+  @Field(() => AddressWhereInput, { nullable: true })
+  @Type(() => AddressWhereInput)
+  where?: AddressWhereInput;
 }

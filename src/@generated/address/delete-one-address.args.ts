@@ -6,8 +6,7 @@ import { Type } from 'class-transformer';
 
 @ArgsType()
 export class DeleteOneAddressArgs {
-
-    @Field(() => AddressWhereUniqueInput, {nullable:false})
-    @Type(() => AddressWhereUniqueInput)
-    where!: Prisma.AtLeast<AddressWhereUniqueInput, 'id'>;
+  @Field(() => AddressWhereUniqueInput, { nullable: false })
+  @Type(() => AddressWhereUniqueInput)
+  where!: Prisma.AtLeast<AddressWhereUniqueInput, 'id'>;
 }

@@ -9,31 +9,30 @@ import { AddressSumOrderByAggregateInput } from './address-sum-order-by-aggregat
 
 @InputType()
 export class AddressOrderByWithAggregationInput {
+  @Field(() => SortOrder, { nullable: true })
+  id?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    id?: keyof typeof SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  addressLine?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    addressLine?: keyof typeof SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  postalCode?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    postalCode?: keyof typeof SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  country?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    country?: keyof typeof SortOrder;
+  @Field(() => AddressCountOrderByAggregateInput, { nullable: true })
+  _count?: AddressCountOrderByAggregateInput;
 
-    @Field(() => AddressCountOrderByAggregateInput, {nullable:true})
-    _count?: AddressCountOrderByAggregateInput;
+  @Field(() => AddressAvgOrderByAggregateInput, { nullable: true })
+  _avg?: AddressAvgOrderByAggregateInput;
 
-    @Field(() => AddressAvgOrderByAggregateInput, {nullable:true})
-    _avg?: AddressAvgOrderByAggregateInput;
+  @Field(() => AddressMaxOrderByAggregateInput, { nullable: true })
+  _max?: AddressMaxOrderByAggregateInput;
 
-    @Field(() => AddressMaxOrderByAggregateInput, {nullable:true})
-    _max?: AddressMaxOrderByAggregateInput;
+  @Field(() => AddressMinOrderByAggregateInput, { nullable: true })
+  _min?: AddressMinOrderByAggregateInput;
 
-    @Field(() => AddressMinOrderByAggregateInput, {nullable:true})
-    _min?: AddressMinOrderByAggregateInput;
-
-    @Field(() => AddressSumOrderByAggregateInput, {nullable:true})
-    _sum?: AddressSumOrderByAggregateInput;
+  @Field(() => AddressSumOrderByAggregateInput, { nullable: true })
+  _sum?: AddressSumOrderByAggregateInput;
 }

@@ -7,12 +7,11 @@ import { AddressCreateWithoutReceiverShipmentsInput } from './address-create-wit
 
 @InputType()
 export class AddressCreateOrConnectWithoutReceiverShipmentsInput {
+  @Field(() => AddressWhereUniqueInput, { nullable: false })
+  @Type(() => AddressWhereUniqueInput)
+  where!: Prisma.AtLeast<AddressWhereUniqueInput, 'id'>;
 
-    @Field(() => AddressWhereUniqueInput, {nullable:false})
-    @Type(() => AddressWhereUniqueInput)
-    where!: Prisma.AtLeast<AddressWhereUniqueInput, 'id'>;
-
-    @Field(() => AddressCreateWithoutReceiverShipmentsInput, {nullable:false})
-    @Type(() => AddressCreateWithoutReceiverShipmentsInput)
-    create!: AddressCreateWithoutReceiverShipmentsInput;
+  @Field(() => AddressCreateWithoutReceiverShipmentsInput, { nullable: false })
+  @Type(() => AddressCreateWithoutReceiverShipmentsInput)
+  create!: AddressCreateWithoutReceiverShipmentsInput;
 }

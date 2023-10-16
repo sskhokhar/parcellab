@@ -6,8 +6,7 @@ import { Type } from 'class-transformer';
 
 @ArgsType()
 export class FindUniqueAddressOrThrowArgs {
-
-    @Field(() => AddressWhereUniqueInput, {nullable:false})
-    @Type(() => AddressWhereUniqueInput)
-    where!: Prisma.AtLeast<AddressWhereUniqueInput, 'id'>;
+  @Field(() => AddressWhereUniqueInput, { nullable: false })
+  @Type(() => AddressWhereUniqueInput)
+  where!: Prisma.AtLeast<AddressWhereUniqueInput, 'id'>;
 }

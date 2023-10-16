@@ -4,7 +4,6 @@ import { StringFieldUpdateOperationsInput } from '../prisma/string-field-update-
 
 @InputType()
 export class ArticleOnShipmentUncheckedUpdateManyWithoutShipmentInput {
-
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    articleId?: StringFieldUpdateOperationsInput;
+  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+  articleId?: StringFieldUpdateOperationsInput;
 }

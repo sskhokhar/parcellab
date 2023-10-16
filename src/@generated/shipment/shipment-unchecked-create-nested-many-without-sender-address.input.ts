@@ -8,16 +8,19 @@ import { ShipmentWhereUniqueInput } from './shipment-where-unique.input';
 
 @InputType()
 export class ShipmentUncheckedCreateNestedManyWithoutSenderAddressInput {
+  @Field(() => [ShipmentCreateWithoutSenderAddressInput], { nullable: true })
+  @Type(() => ShipmentCreateWithoutSenderAddressInput)
+  create?: Array<ShipmentCreateWithoutSenderAddressInput>;
 
-    @Field(() => [ShipmentCreateWithoutSenderAddressInput], {nullable:true})
-    @Type(() => ShipmentCreateWithoutSenderAddressInput)
-    create?: Array<ShipmentCreateWithoutSenderAddressInput>;
+  @Field(() => [ShipmentCreateOrConnectWithoutSenderAddressInput], {
+    nullable: true,
+  })
+  @Type(() => ShipmentCreateOrConnectWithoutSenderAddressInput)
+  connectOrCreate?: Array<ShipmentCreateOrConnectWithoutSenderAddressInput>;
 
-    @Field(() => [ShipmentCreateOrConnectWithoutSenderAddressInput], {nullable:true})
-    @Type(() => ShipmentCreateOrConnectWithoutSenderAddressInput)
-    connectOrCreate?: Array<ShipmentCreateOrConnectWithoutSenderAddressInput>;
-
-    @Field(() => [ShipmentWhereUniqueInput], {nullable:true})
-    @Type(() => ShipmentWhereUniqueInput)
-    connect?: Array<Prisma.AtLeast<ShipmentWhereUniqueInput, 'id' | 'trackingNumber'>>;
+  @Field(() => [ShipmentWhereUniqueInput], { nullable: true })
+  @Type(() => ShipmentWhereUniqueInput)
+  connect?: Array<
+    Prisma.AtLeast<ShipmentWhereUniqueInput, 'id' | 'trackingNumber'>
+  >;
 }

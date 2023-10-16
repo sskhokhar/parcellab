@@ -7,29 +7,30 @@ import { AddressOrderByWithRelationInput } from '../address/address-order-by-wit
 
 @InputType()
 export class ShipmentOrderByWithRelationInput {
+  @Field(() => SortOrder, { nullable: true })
+  id?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    id?: keyof typeof SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  trackingNumber?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    trackingNumber?: keyof typeof SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  carrier?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    carrier?: keyof typeof SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  senderAddressId?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    senderAddressId?: keyof typeof SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  receiverAddressId?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    receiverAddressId?: keyof typeof SortOrder;
+  @Field(() => ArticleOnShipmentOrderByRelationAggregateInput, {
+    nullable: true,
+  })
+  @Type(() => ArticleOnShipmentOrderByRelationAggregateInput)
+  articles?: ArticleOnShipmentOrderByRelationAggregateInput;
 
-    @Field(() => ArticleOnShipmentOrderByRelationAggregateInput, {nullable:true})
-    @Type(() => ArticleOnShipmentOrderByRelationAggregateInput)
-    articles?: ArticleOnShipmentOrderByRelationAggregateInput;
+  @Field(() => AddressOrderByWithRelationInput, { nullable: true })
+  senderAddress?: AddressOrderByWithRelationInput;
 
-    @Field(() => AddressOrderByWithRelationInput, {nullable:true})
-    senderAddress?: AddressOrderByWithRelationInput;
-
-    @Field(() => AddressOrderByWithRelationInput, {nullable:true})
-    receiverAddress?: AddressOrderByWithRelationInput;
+  @Field(() => AddressOrderByWithRelationInput, { nullable: true })
+  receiverAddress?: AddressOrderByWithRelationInput;
 }

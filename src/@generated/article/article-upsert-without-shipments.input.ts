@@ -7,16 +7,15 @@ import { ArticleWhereInput } from './article-where.input';
 
 @InputType()
 export class ArticleUpsertWithoutShipmentsInput {
+  @Field(() => ArticleUpdateWithoutShipmentsInput, { nullable: false })
+  @Type(() => ArticleUpdateWithoutShipmentsInput)
+  update!: ArticleUpdateWithoutShipmentsInput;
 
-    @Field(() => ArticleUpdateWithoutShipmentsInput, {nullable:false})
-    @Type(() => ArticleUpdateWithoutShipmentsInput)
-    update!: ArticleUpdateWithoutShipmentsInput;
+  @Field(() => ArticleCreateWithoutShipmentsInput, { nullable: false })
+  @Type(() => ArticleCreateWithoutShipmentsInput)
+  create!: ArticleCreateWithoutShipmentsInput;
 
-    @Field(() => ArticleCreateWithoutShipmentsInput, {nullable:false})
-    @Type(() => ArticleCreateWithoutShipmentsInput)
-    create!: ArticleCreateWithoutShipmentsInput;
-
-    @Field(() => ArticleWhereInput, {nullable:true})
-    @Type(() => ArticleWhereInput)
-    where?: ArticleWhereInput;
+  @Field(() => ArticleWhereInput, { nullable: true })
+  @Type(() => ArticleWhereInput)
+  where?: ArticleWhereInput;
 }

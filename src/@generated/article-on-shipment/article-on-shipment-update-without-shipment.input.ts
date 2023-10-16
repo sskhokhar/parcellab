@@ -5,8 +5,9 @@ import { Type } from 'class-transformer';
 
 @InputType()
 export class ArticleOnShipmentUpdateWithoutShipmentInput {
-
-    @Field(() => ArticleUpdateOneRequiredWithoutShipmentsNestedInput, {nullable:true})
-    @Type(() => ArticleUpdateOneRequiredWithoutShipmentsNestedInput)
-    article?: ArticleUpdateOneRequiredWithoutShipmentsNestedInput;
+  @Field(() => ArticleUpdateOneRequiredWithoutShipmentsNestedInput, {
+    nullable: true,
+  })
+  @Type(() => ArticleUpdateOneRequiredWithoutShipmentsNestedInput)
+  article?: ArticleUpdateOneRequiredWithoutShipmentsNestedInput;
 }

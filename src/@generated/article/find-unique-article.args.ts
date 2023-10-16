@@ -6,8 +6,7 @@ import { Type } from 'class-transformer';
 
 @ArgsType()
 export class FindUniqueArticleArgs {
-
-    @Field(() => ArticleWhereUniqueInput, {nullable:false})
-    @Type(() => ArticleWhereUniqueInput)
-    where!: Prisma.AtLeast<ArticleWhereUniqueInput, 'id' | 'sku'>;
+  @Field(() => ArticleWhereUniqueInput, { nullable: false })
+  @Type(() => ArticleWhereUniqueInput)
+  where!: Prisma.AtLeast<ArticleWhereUniqueInput, 'id' | 'sku'>;
 }

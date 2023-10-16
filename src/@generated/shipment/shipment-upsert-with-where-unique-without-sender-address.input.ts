@@ -8,16 +8,15 @@ import { ShipmentCreateWithoutSenderAddressInput } from './shipment-create-witho
 
 @InputType()
 export class ShipmentUpsertWithWhereUniqueWithoutSenderAddressInput {
+  @Field(() => ShipmentWhereUniqueInput, { nullable: false })
+  @Type(() => ShipmentWhereUniqueInput)
+  where!: Prisma.AtLeast<ShipmentWhereUniqueInput, 'id' | 'trackingNumber'>;
 
-    @Field(() => ShipmentWhereUniqueInput, {nullable:false})
-    @Type(() => ShipmentWhereUniqueInput)
-    where!: Prisma.AtLeast<ShipmentWhereUniqueInput, 'id' | 'trackingNumber'>;
+  @Field(() => ShipmentUpdateWithoutSenderAddressInput, { nullable: false })
+  @Type(() => ShipmentUpdateWithoutSenderAddressInput)
+  update!: ShipmentUpdateWithoutSenderAddressInput;
 
-    @Field(() => ShipmentUpdateWithoutSenderAddressInput, {nullable:false})
-    @Type(() => ShipmentUpdateWithoutSenderAddressInput)
-    update!: ShipmentUpdateWithoutSenderAddressInput;
-
-    @Field(() => ShipmentCreateWithoutSenderAddressInput, {nullable:false})
-    @Type(() => ShipmentCreateWithoutSenderAddressInput)
-    create!: ShipmentCreateWithoutSenderAddressInput;
+  @Field(() => ShipmentCreateWithoutSenderAddressInput, { nullable: false })
+  @Type(() => ShipmentCreateWithoutSenderAddressInput)
+  create!: ShipmentCreateWithoutSenderAddressInput;
 }

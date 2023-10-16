@@ -4,10 +4,9 @@ import { Int } from '@nestjs/graphql';
 
 @ObjectType()
 export class AddressCount {
+  @Field(() => Int, { nullable: false })
+  receiverShipments?: number;
 
-    @Field(() => Int, {nullable:false})
-    receiverShipments?: number;
-
-    @Field(() => Int, {nullable:false})
-    senderShipments?: number;
+  @Field(() => Int, { nullable: false })
+  senderShipments?: number;
 }

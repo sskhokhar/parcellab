@@ -8,19 +8,18 @@ import { AddressMaxAggregate } from './address-max-aggregate.output';
 
 @ObjectType()
 export class AggregateAddress {
+  @Field(() => AddressCountAggregate, { nullable: true })
+  _count?: AddressCountAggregate;
 
-    @Field(() => AddressCountAggregate, {nullable:true})
-    _count?: AddressCountAggregate;
+  @Field(() => AddressAvgAggregate, { nullable: true })
+  _avg?: AddressAvgAggregate;
 
-    @Field(() => AddressAvgAggregate, {nullable:true})
-    _avg?: AddressAvgAggregate;
+  @Field(() => AddressSumAggregate, { nullable: true })
+  _sum?: AddressSumAggregate;
 
-    @Field(() => AddressSumAggregate, {nullable:true})
-    _sum?: AddressSumAggregate;
+  @Field(() => AddressMinAggregate, { nullable: true })
+  _min?: AddressMinAggregate;
 
-    @Field(() => AddressMinAggregate, {nullable:true})
-    _min?: AddressMinAggregate;
-
-    @Field(() => AddressMaxAggregate, {nullable:true})
-    _max?: AddressMaxAggregate;
+  @Field(() => AddressMaxAggregate, { nullable: true })
+  _max?: AddressMaxAggregate;
 }

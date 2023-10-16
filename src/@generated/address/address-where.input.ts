@@ -6,31 +6,30 @@ import { ShipmentListRelationFilter } from '../shipment/shipment-list-relation-f
 
 @InputType()
 export class AddressWhereInput {
+  @Field(() => [AddressWhereInput], { nullable: true })
+  AND?: Array<AddressWhereInput>;
 
-    @Field(() => [AddressWhereInput], {nullable:true})
-    AND?: Array<AddressWhereInput>;
+  @Field(() => [AddressWhereInput], { nullable: true })
+  OR?: Array<AddressWhereInput>;
 
-    @Field(() => [AddressWhereInput], {nullable:true})
-    OR?: Array<AddressWhereInput>;
+  @Field(() => [AddressWhereInput], { nullable: true })
+  NOT?: Array<AddressWhereInput>;
 
-    @Field(() => [AddressWhereInput], {nullable:true})
-    NOT?: Array<AddressWhereInput>;
+  @Field(() => StringFilter, { nullable: true })
+  id?: StringFilter;
 
-    @Field(() => StringFilter, {nullable:true})
-    id?: StringFilter;
+  @Field(() => StringFilter, { nullable: true })
+  addressLine?: StringFilter;
 
-    @Field(() => StringFilter, {nullable:true})
-    addressLine?: StringFilter;
+  @Field(() => IntFilter, { nullable: true })
+  postalCode?: IntFilter;
 
-    @Field(() => IntFilter, {nullable:true})
-    postalCode?: IntFilter;
+  @Field(() => StringFilter, { nullable: true })
+  country?: StringFilter;
 
-    @Field(() => StringFilter, {nullable:true})
-    country?: StringFilter;
+  @Field(() => ShipmentListRelationFilter, { nullable: true })
+  receiverShipments?: ShipmentListRelationFilter;
 
-    @Field(() => ShipmentListRelationFilter, {nullable:true})
-    receiverShipments?: ShipmentListRelationFilter;
-
-    @Field(() => ShipmentListRelationFilter, {nullable:true})
-    senderShipments?: ShipmentListRelationFilter;
+  @Field(() => ShipmentListRelationFilter, { nullable: true })
+  senderShipments?: ShipmentListRelationFilter;
 }

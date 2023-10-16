@@ -6,12 +6,11 @@ import { ShipmentUpdateWithoutArticlesInput } from './shipment-update-without-ar
 
 @InputType()
 export class ShipmentUpdateToOneWithWhereWithoutArticlesInput {
+  @Field(() => ShipmentWhereInput, { nullable: true })
+  @Type(() => ShipmentWhereInput)
+  where?: ShipmentWhereInput;
 
-    @Field(() => ShipmentWhereInput, {nullable:true})
-    @Type(() => ShipmentWhereInput)
-    where?: ShipmentWhereInput;
-
-    @Field(() => ShipmentUpdateWithoutArticlesInput, {nullable:false})
-    @Type(() => ShipmentUpdateWithoutArticlesInput)
-    data!: ShipmentUpdateWithoutArticlesInput;
+  @Field(() => ShipmentUpdateWithoutArticlesInput, { nullable: false })
+  @Type(() => ShipmentUpdateWithoutArticlesInput)
+  data!: ShipmentUpdateWithoutArticlesInput;
 }

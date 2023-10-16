@@ -7,12 +7,11 @@ import { ShipmentUpdateWithoutReceiverAddressInput } from './shipment-update-wit
 
 @InputType()
 export class ShipmentUpdateWithWhereUniqueWithoutReceiverAddressInput {
+  @Field(() => ShipmentWhereUniqueInput, { nullable: false })
+  @Type(() => ShipmentWhereUniqueInput)
+  where!: Prisma.AtLeast<ShipmentWhereUniqueInput, 'id' | 'trackingNumber'>;
 
-    @Field(() => ShipmentWhereUniqueInput, {nullable:false})
-    @Type(() => ShipmentWhereUniqueInput)
-    where!: Prisma.AtLeast<ShipmentWhereUniqueInput, 'id' | 'trackingNumber'>;
-
-    @Field(() => ShipmentUpdateWithoutReceiverAddressInput, {nullable:false})
-    @Type(() => ShipmentUpdateWithoutReceiverAddressInput)
-    data!: ShipmentUpdateWithoutReceiverAddressInput;
+  @Field(() => ShipmentUpdateWithoutReceiverAddressInput, { nullable: false })
+  @Type(() => ShipmentUpdateWithoutReceiverAddressInput)
+  data!: ShipmentUpdateWithoutReceiverAddressInput;
 }

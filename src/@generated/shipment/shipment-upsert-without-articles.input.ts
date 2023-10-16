@@ -7,16 +7,15 @@ import { ShipmentWhereInput } from './shipment-where.input';
 
 @InputType()
 export class ShipmentUpsertWithoutArticlesInput {
+  @Field(() => ShipmentUpdateWithoutArticlesInput, { nullable: false })
+  @Type(() => ShipmentUpdateWithoutArticlesInput)
+  update!: ShipmentUpdateWithoutArticlesInput;
 
-    @Field(() => ShipmentUpdateWithoutArticlesInput, {nullable:false})
-    @Type(() => ShipmentUpdateWithoutArticlesInput)
-    update!: ShipmentUpdateWithoutArticlesInput;
+  @Field(() => ShipmentCreateWithoutArticlesInput, { nullable: false })
+  @Type(() => ShipmentCreateWithoutArticlesInput)
+  create!: ShipmentCreateWithoutArticlesInput;
 
-    @Field(() => ShipmentCreateWithoutArticlesInput, {nullable:false})
-    @Type(() => ShipmentCreateWithoutArticlesInput)
-    create!: ShipmentCreateWithoutArticlesInput;
-
-    @Field(() => ShipmentWhereInput, {nullable:true})
-    @Type(() => ShipmentWhereInput)
-    where?: ShipmentWhereInput;
+  @Field(() => ShipmentWhereInput, { nullable: true })
+  @Type(() => ShipmentWhereInput)
+  where?: ShipmentWhereInput;
 }

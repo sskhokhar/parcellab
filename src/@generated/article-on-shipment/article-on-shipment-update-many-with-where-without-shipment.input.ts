@@ -6,12 +6,13 @@ import { ArticleOnShipmentUncheckedUpdateManyWithoutShipmentInput } from './arti
 
 @InputType()
 export class ArticleOnShipmentUpdateManyWithWhereWithoutShipmentInput {
+  @Field(() => ArticleOnShipmentScalarWhereInput, { nullable: false })
+  @Type(() => ArticleOnShipmentScalarWhereInput)
+  where!: ArticleOnShipmentScalarWhereInput;
 
-    @Field(() => ArticleOnShipmentScalarWhereInput, {nullable:false})
-    @Type(() => ArticleOnShipmentScalarWhereInput)
-    where!: ArticleOnShipmentScalarWhereInput;
-
-    @Field(() => ArticleOnShipmentUncheckedUpdateManyWithoutShipmentInput, {nullable:false})
-    @Type(() => ArticleOnShipmentUncheckedUpdateManyWithoutShipmentInput)
-    data!: ArticleOnShipmentUncheckedUpdateManyWithoutShipmentInput;
+  @Field(() => ArticleOnShipmentUncheckedUpdateManyWithoutShipmentInput, {
+    nullable: false,
+  })
+  @Type(() => ArticleOnShipmentUncheckedUpdateManyWithoutShipmentInput)
+  data!: ArticleOnShipmentUncheckedUpdateManyWithoutShipmentInput;
 }

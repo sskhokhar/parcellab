@@ -7,12 +7,11 @@ import { AddressCreateWithoutSenderShipmentsInput } from './address-create-witho
 
 @InputType()
 export class AddressCreateOrConnectWithoutSenderShipmentsInput {
+  @Field(() => AddressWhereUniqueInput, { nullable: false })
+  @Type(() => AddressWhereUniqueInput)
+  where!: Prisma.AtLeast<AddressWhereUniqueInput, 'id'>;
 
-    @Field(() => AddressWhereUniqueInput, {nullable:false})
-    @Type(() => AddressWhereUniqueInput)
-    where!: Prisma.AtLeast<AddressWhereUniqueInput, 'id'>;
-
-    @Field(() => AddressCreateWithoutSenderShipmentsInput, {nullable:false})
-    @Type(() => AddressCreateWithoutSenderShipmentsInput)
-    create!: AddressCreateWithoutSenderShipmentsInput;
+  @Field(() => AddressCreateWithoutSenderShipmentsInput, { nullable: false })
+  @Type(() => AddressCreateWithoutSenderShipmentsInput)
+  create!: AddressCreateWithoutSenderShipmentsInput;
 }

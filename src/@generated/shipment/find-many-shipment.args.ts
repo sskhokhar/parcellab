@@ -10,23 +10,22 @@ import { ShipmentScalarFieldEnum } from './shipment-scalar-field.enum';
 
 @ArgsType()
 export class FindManyShipmentArgs {
+  @Field(() => ShipmentWhereInput, { nullable: true })
+  @Type(() => ShipmentWhereInput)
+  where?: ShipmentWhereInput;
 
-    @Field(() => ShipmentWhereInput, {nullable:true})
-    @Type(() => ShipmentWhereInput)
-    where?: ShipmentWhereInput;
+  @Field(() => [ShipmentOrderByWithRelationInput], { nullable: true })
+  orderBy?: Array<ShipmentOrderByWithRelationInput>;
 
-    @Field(() => [ShipmentOrderByWithRelationInput], {nullable:true})
-    orderBy?: Array<ShipmentOrderByWithRelationInput>;
+  @Field(() => ShipmentWhereUniqueInput, { nullable: true })
+  cursor?: Prisma.AtLeast<ShipmentWhereUniqueInput, 'id' | 'trackingNumber'>;
 
-    @Field(() => ShipmentWhereUniqueInput, {nullable:true})
-    cursor?: Prisma.AtLeast<ShipmentWhereUniqueInput, 'id' | 'trackingNumber'>;
+  @Field(() => Int, { nullable: true })
+  take?: number;
 
-    @Field(() => Int, {nullable:true})
-    take?: number;
+  @Field(() => Int, { nullable: true })
+  skip?: number;
 
-    @Field(() => Int, {nullable:true})
-    skip?: number;
-
-    @Field(() => [ShipmentScalarFieldEnum], {nullable:true})
-    distinct?: Array<keyof typeof ShipmentScalarFieldEnum>;
+  @Field(() => [ShipmentScalarFieldEnum], { nullable: true })
+  distinct?: Array<keyof typeof ShipmentScalarFieldEnum>;
 }

@@ -9,25 +9,24 @@ import { ArticleCount } from './article-count.output';
 
 @ObjectType()
 export class Article {
+  @Field(() => ID, { nullable: false })
+  id!: string;
 
-    @Field(() => ID, {nullable:false})
-    id!: string;
+  @Field(() => String, { nullable: false })
+  name!: string;
 
-    @Field(() => String, {nullable:false})
-    name!: string;
+  @Field(() => Int, { nullable: false })
+  qty!: number;
 
-    @Field(() => Int, {nullable:false})
-    qty!: number;
+  @Field(() => GraphQLDecimal, { nullable: false })
+  price!: Decimal;
 
-    @Field(() => GraphQLDecimal, {nullable:false})
-    price!: Decimal;
+  @Field(() => String, { nullable: false })
+  sku!: string;
 
-    @Field(() => String, {nullable:false})
-    sku!: string;
+  @Field(() => [ArticleOnShipment], { nullable: true })
+  shipments?: Array<ArticleOnShipment>;
 
-    @Field(() => [ArticleOnShipment], {nullable:true})
-    shipments?: Array<ArticleOnShipment>;
-
-    @Field(() => ArticleCount, {nullable:false})
-    _count?: ArticleCount;
+  @Field(() => ArticleCount, { nullable: false })
+  _count?: ArticleCount;
 }

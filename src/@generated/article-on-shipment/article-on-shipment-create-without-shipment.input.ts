@@ -5,8 +5,7 @@ import { Type } from 'class-transformer';
 
 @InputType()
 export class ArticleOnShipmentCreateWithoutShipmentInput {
-
-    @Field(() => ArticleCreateNestedOneWithoutShipmentsInput, {nullable:false})
-    @Type(() => ArticleCreateNestedOneWithoutShipmentsInput)
-    article!: ArticleCreateNestedOneWithoutShipmentsInput;
+  @Field(() => ArticleCreateNestedOneWithoutShipmentsInput, { nullable: false })
+  @Type(() => ArticleCreateNestedOneWithoutShipmentsInput)
+  article!: ArticleCreateNestedOneWithoutShipmentsInput;
 }

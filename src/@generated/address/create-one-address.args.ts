@@ -5,8 +5,7 @@ import { Type } from 'class-transformer';
 
 @ArgsType()
 export class CreateOneAddressArgs {
-
-    @Field(() => AddressCreateInput, {nullable:false})
-    @Type(() => AddressCreateInput)
-    data!: AddressCreateInput;
+  @Field(() => AddressCreateInput, { nullable: false })
+  @Type(() => AddressCreateInput)
+  data!: AddressCreateInput;
 }

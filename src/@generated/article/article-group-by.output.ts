@@ -11,34 +11,33 @@ import { ArticleMaxAggregate } from './article-max-aggregate.output';
 
 @ObjectType()
 export class ArticleGroupBy {
+  @Field(() => String, { nullable: false })
+  id!: string;
 
-    @Field(() => String, {nullable:false})
-    id!: string;
+  @Field(() => String, { nullable: false })
+  name!: string;
 
-    @Field(() => String, {nullable:false})
-    name!: string;
+  @Field(() => Int, { nullable: false })
+  qty!: number;
 
-    @Field(() => Int, {nullable:false})
-    qty!: number;
+  @Field(() => GraphQLDecimal, { nullable: false })
+  price!: Decimal;
 
-    @Field(() => GraphQLDecimal, {nullable:false})
-    price!: Decimal;
+  @Field(() => String, { nullable: false })
+  sku!: string;
 
-    @Field(() => String, {nullable:false})
-    sku!: string;
+  @Field(() => ArticleCountAggregate, { nullable: true })
+  _count?: ArticleCountAggregate;
 
-    @Field(() => ArticleCountAggregate, {nullable:true})
-    _count?: ArticleCountAggregate;
+  @Field(() => ArticleAvgAggregate, { nullable: true })
+  _avg?: ArticleAvgAggregate;
 
-    @Field(() => ArticleAvgAggregate, {nullable:true})
-    _avg?: ArticleAvgAggregate;
+  @Field(() => ArticleSumAggregate, { nullable: true })
+  _sum?: ArticleSumAggregate;
 
-    @Field(() => ArticleSumAggregate, {nullable:true})
-    _sum?: ArticleSumAggregate;
+  @Field(() => ArticleMinAggregate, { nullable: true })
+  _min?: ArticleMinAggregate;
 
-    @Field(() => ArticleMinAggregate, {nullable:true})
-    _min?: ArticleMinAggregate;
-
-    @Field(() => ArticleMaxAggregate, {nullable:true})
-    _max?: ArticleMaxAggregate;
+  @Field(() => ArticleMaxAggregate, { nullable: true })
+  _max?: ArticleMaxAggregate;
 }

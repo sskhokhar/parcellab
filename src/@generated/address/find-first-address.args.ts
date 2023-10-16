@@ -10,23 +10,22 @@ import { AddressScalarFieldEnum } from './address-scalar-field.enum';
 
 @ArgsType()
 export class FindFirstAddressArgs {
+  @Field(() => AddressWhereInput, { nullable: true })
+  @Type(() => AddressWhereInput)
+  where?: AddressWhereInput;
 
-    @Field(() => AddressWhereInput, {nullable:true})
-    @Type(() => AddressWhereInput)
-    where?: AddressWhereInput;
+  @Field(() => [AddressOrderByWithRelationInput], { nullable: true })
+  orderBy?: Array<AddressOrderByWithRelationInput>;
 
-    @Field(() => [AddressOrderByWithRelationInput], {nullable:true})
-    orderBy?: Array<AddressOrderByWithRelationInput>;
+  @Field(() => AddressWhereUniqueInput, { nullable: true })
+  cursor?: Prisma.AtLeast<AddressWhereUniqueInput, 'id'>;
 
-    @Field(() => AddressWhereUniqueInput, {nullable:true})
-    cursor?: Prisma.AtLeast<AddressWhereUniqueInput, 'id'>;
+  @Field(() => Int, { nullable: true })
+  take?: number;
 
-    @Field(() => Int, {nullable:true})
-    take?: number;
+  @Field(() => Int, { nullable: true })
+  skip?: number;
 
-    @Field(() => Int, {nullable:true})
-    skip?: number;
-
-    @Field(() => [AddressScalarFieldEnum], {nullable:true})
-    distinct?: Array<keyof typeof AddressScalarFieldEnum>;
+  @Field(() => [AddressScalarFieldEnum], { nullable: true })
+  distinct?: Array<keyof typeof AddressScalarFieldEnum>;
 }

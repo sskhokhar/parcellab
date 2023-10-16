@@ -6,12 +6,11 @@ import { ShipmentUpdateManyMutationInput } from './shipment-update-many-mutation
 
 @InputType()
 export class ShipmentUpdateManyWithWhereWithoutSenderAddressInput {
+  @Field(() => ShipmentScalarWhereInput, { nullable: false })
+  @Type(() => ShipmentScalarWhereInput)
+  where!: ShipmentScalarWhereInput;
 
-    @Field(() => ShipmentScalarWhereInput, {nullable:false})
-    @Type(() => ShipmentScalarWhereInput)
-    where!: ShipmentScalarWhereInput;
-
-    @Field(() => ShipmentUpdateManyMutationInput, {nullable:false})
-    @Type(() => ShipmentUpdateManyMutationInput)
-    data!: ShipmentUpdateManyMutationInput;
+  @Field(() => ShipmentUpdateManyMutationInput, { nullable: false })
+  @Type(() => ShipmentUpdateManyMutationInput)
+  data!: ShipmentUpdateManyMutationInput;
 }

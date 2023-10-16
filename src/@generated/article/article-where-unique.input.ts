@@ -9,36 +9,35 @@ import { ArticleOnShipmentListRelationFilter } from '../article-on-shipment/arti
 
 @InputType()
 export class ArticleWhereUniqueInput {
+  @Field(() => String, { nullable: true })
+  id?: string;
 
-    @Field(() => String, {nullable:true})
-    id?: string;
+  @Field(() => String, { nullable: true })
+  sku?: string;
 
-    @Field(() => String, {nullable:true})
-    sku?: string;
+  @Field(() => [ArticleWhereInput], { nullable: true })
+  @Type(() => ArticleWhereInput)
+  AND?: Array<ArticleWhereInput>;
 
-    @Field(() => [ArticleWhereInput], {nullable:true})
-    @Type(() => ArticleWhereInput)
-    AND?: Array<ArticleWhereInput>;
+  @Field(() => [ArticleWhereInput], { nullable: true })
+  @Type(() => ArticleWhereInput)
+  OR?: Array<ArticleWhereInput>;
 
-    @Field(() => [ArticleWhereInput], {nullable:true})
-    @Type(() => ArticleWhereInput)
-    OR?: Array<ArticleWhereInput>;
+  @Field(() => [ArticleWhereInput], { nullable: true })
+  @Type(() => ArticleWhereInput)
+  NOT?: Array<ArticleWhereInput>;
 
-    @Field(() => [ArticleWhereInput], {nullable:true})
-    @Type(() => ArticleWhereInput)
-    NOT?: Array<ArticleWhereInput>;
+  @Field(() => StringFilter, { nullable: true })
+  name?: StringFilter;
 
-    @Field(() => StringFilter, {nullable:true})
-    name?: StringFilter;
+  @Field(() => IntFilter, { nullable: true })
+  qty?: IntFilter;
 
-    @Field(() => IntFilter, {nullable:true})
-    qty?: IntFilter;
+  @Field(() => DecimalFilter, { nullable: true })
+  @Type(() => DecimalFilter)
+  price?: DecimalFilter;
 
-    @Field(() => DecimalFilter, {nullable:true})
-    @Type(() => DecimalFilter)
-    price?: DecimalFilter;
-
-    @Field(() => ArticleOnShipmentListRelationFilter, {nullable:true})
-    @Type(() => ArticleOnShipmentListRelationFilter)
-    shipments?: ArticleOnShipmentListRelationFilter;
+  @Field(() => ArticleOnShipmentListRelationFilter, { nullable: true })
+  @Type(() => ArticleOnShipmentListRelationFilter)
+  shipments?: ArticleOnShipmentListRelationFilter;
 }

@@ -9,31 +9,30 @@ import { AddressMaxAggregate } from './address-max-aggregate.output';
 
 @ObjectType()
 export class AddressGroupBy {
+  @Field(() => String, { nullable: false })
+  id!: string;
 
-    @Field(() => String, {nullable:false})
-    id!: string;
+  @Field(() => String, { nullable: false })
+  addressLine!: string;
 
-    @Field(() => String, {nullable:false})
-    addressLine!: string;
+  @Field(() => Int, { nullable: false })
+  postalCode!: number;
 
-    @Field(() => Int, {nullable:false})
-    postalCode!: number;
+  @Field(() => String, { nullable: false })
+  country!: string;
 
-    @Field(() => String, {nullable:false})
-    country!: string;
+  @Field(() => AddressCountAggregate, { nullable: true })
+  _count?: AddressCountAggregate;
 
-    @Field(() => AddressCountAggregate, {nullable:true})
-    _count?: AddressCountAggregate;
+  @Field(() => AddressAvgAggregate, { nullable: true })
+  _avg?: AddressAvgAggregate;
 
-    @Field(() => AddressAvgAggregate, {nullable:true})
-    _avg?: AddressAvgAggregate;
+  @Field(() => AddressSumAggregate, { nullable: true })
+  _sum?: AddressSumAggregate;
 
-    @Field(() => AddressSumAggregate, {nullable:true})
-    _sum?: AddressSumAggregate;
+  @Field(() => AddressMinAggregate, { nullable: true })
+  _min?: AddressMinAggregate;
 
-    @Field(() => AddressMinAggregate, {nullable:true})
-    _min?: AddressMinAggregate;
-
-    @Field(() => AddressMaxAggregate, {nullable:true})
-    _max?: AddressMaxAggregate;
+  @Field(() => AddressMaxAggregate, { nullable: true })
+  _max?: AddressMaxAggregate;
 }

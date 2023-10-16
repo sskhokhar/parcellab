@@ -3,7 +3,6 @@ import { InputType } from '@nestjs/graphql';
 
 @InputType()
 export class ArticleOnShipmentUncheckedCreateWithoutShipmentInput {
-
-    @Field(() => String, {nullable:false})
-    articleId!: string;
+  @Field(() => String, { nullable: false })
+  articleId!: string;
 }

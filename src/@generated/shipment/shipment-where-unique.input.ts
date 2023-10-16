@@ -8,38 +8,37 @@ import { AddressRelationFilter } from '../address/address-relation-filter.input'
 
 @InputType()
 export class ShipmentWhereUniqueInput {
+  @Field(() => String, { nullable: true })
+  id?: string;
 
-    @Field(() => String, {nullable:true})
-    id?: string;
+  @Field(() => String, { nullable: true })
+  trackingNumber?: string;
 
-    @Field(() => String, {nullable:true})
-    trackingNumber?: string;
+  @Field(() => [ShipmentWhereInput], { nullable: true })
+  AND?: Array<ShipmentWhereInput>;
 
-    @Field(() => [ShipmentWhereInput], {nullable:true})
-    AND?: Array<ShipmentWhereInput>;
+  @Field(() => [ShipmentWhereInput], { nullable: true })
+  OR?: Array<ShipmentWhereInput>;
 
-    @Field(() => [ShipmentWhereInput], {nullable:true})
-    OR?: Array<ShipmentWhereInput>;
+  @Field(() => [ShipmentWhereInput], { nullable: true })
+  NOT?: Array<ShipmentWhereInput>;
 
-    @Field(() => [ShipmentWhereInput], {nullable:true})
-    NOT?: Array<ShipmentWhereInput>;
+  @Field(() => StringFilter, { nullable: true })
+  carrier?: StringFilter;
 
-    @Field(() => StringFilter, {nullable:true})
-    carrier?: StringFilter;
+  @Field(() => StringFilter, { nullable: true })
+  senderAddressId?: StringFilter;
 
-    @Field(() => StringFilter, {nullable:true})
-    senderAddressId?: StringFilter;
+  @Field(() => StringFilter, { nullable: true })
+  receiverAddressId?: StringFilter;
 
-    @Field(() => StringFilter, {nullable:true})
-    receiverAddressId?: StringFilter;
+  @Field(() => ArticleOnShipmentListRelationFilter, { nullable: true })
+  @Type(() => ArticleOnShipmentListRelationFilter)
+  articles?: ArticleOnShipmentListRelationFilter;
 
-    @Field(() => ArticleOnShipmentListRelationFilter, {nullable:true})
-    @Type(() => ArticleOnShipmentListRelationFilter)
-    articles?: ArticleOnShipmentListRelationFilter;
+  @Field(() => AddressRelationFilter, { nullable: true })
+  senderAddress?: AddressRelationFilter;
 
-    @Field(() => AddressRelationFilter, {nullable:true})
-    senderAddress?: AddressRelationFilter;
-
-    @Field(() => AddressRelationFilter, {nullable:true})
-    receiverAddress?: AddressRelationFilter;
+  @Field(() => AddressRelationFilter, { nullable: true })
+  receiverAddress?: AddressRelationFilter;
 }

@@ -8,16 +8,15 @@ import { AddressUpdateInput } from './address-update.input';
 
 @ArgsType()
 export class UpsertOneAddressArgs {
+  @Field(() => AddressWhereUniqueInput, { nullable: false })
+  @Type(() => AddressWhereUniqueInput)
+  where!: Prisma.AtLeast<AddressWhereUniqueInput, 'id'>;
 
-    @Field(() => AddressWhereUniqueInput, {nullable:false})
-    @Type(() => AddressWhereUniqueInput)
-    where!: Prisma.AtLeast<AddressWhereUniqueInput, 'id'>;
+  @Field(() => AddressCreateInput, { nullable: false })
+  @Type(() => AddressCreateInput)
+  create!: AddressCreateInput;
 
-    @Field(() => AddressCreateInput, {nullable:false})
-    @Type(() => AddressCreateInput)
-    create!: AddressCreateInput;
-
-    @Field(() => AddressUpdateInput, {nullable:false})
-    @Type(() => AddressUpdateInput)
-    update!: AddressUpdateInput;
+  @Field(() => AddressUpdateInput, { nullable: false })
+  @Type(() => AddressUpdateInput)
+  update!: AddressUpdateInput;
 }

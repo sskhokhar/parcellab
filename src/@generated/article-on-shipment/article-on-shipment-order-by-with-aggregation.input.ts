@@ -7,19 +7,18 @@ import { ArticleOnShipmentMinOrderByAggregateInput } from './article-on-shipment
 
 @InputType()
 export class ArticleOnShipmentOrderByWithAggregationInput {
+  @Field(() => SortOrder, { nullable: true })
+  articleId?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    articleId?: keyof typeof SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  shipmentId?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    shipmentId?: keyof typeof SortOrder;
+  @Field(() => ArticleOnShipmentCountOrderByAggregateInput, { nullable: true })
+  _count?: ArticleOnShipmentCountOrderByAggregateInput;
 
-    @Field(() => ArticleOnShipmentCountOrderByAggregateInput, {nullable:true})
-    _count?: ArticleOnShipmentCountOrderByAggregateInput;
+  @Field(() => ArticleOnShipmentMaxOrderByAggregateInput, { nullable: true })
+  _max?: ArticleOnShipmentMaxOrderByAggregateInput;
 
-    @Field(() => ArticleOnShipmentMaxOrderByAggregateInput, {nullable:true})
-    _max?: ArticleOnShipmentMaxOrderByAggregateInput;
-
-    @Field(() => ArticleOnShipmentMinOrderByAggregateInput, {nullable:true})
-    _min?: ArticleOnShipmentMinOrderByAggregateInput;
+  @Field(() => ArticleOnShipmentMinOrderByAggregateInput, { nullable: true })
+  _min?: ArticleOnShipmentMinOrderByAggregateInput;
 }

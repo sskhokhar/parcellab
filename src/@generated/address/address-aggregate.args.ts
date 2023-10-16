@@ -14,35 +14,34 @@ import { AddressMaxAggregateInput } from './address-max-aggregate.input';
 
 @ArgsType()
 export class AddressAggregateArgs {
+  @Field(() => AddressWhereInput, { nullable: true })
+  @Type(() => AddressWhereInput)
+  where?: AddressWhereInput;
 
-    @Field(() => AddressWhereInput, {nullable:true})
-    @Type(() => AddressWhereInput)
-    where?: AddressWhereInput;
+  @Field(() => [AddressOrderByWithRelationInput], { nullable: true })
+  orderBy?: Array<AddressOrderByWithRelationInput>;
 
-    @Field(() => [AddressOrderByWithRelationInput], {nullable:true})
-    orderBy?: Array<AddressOrderByWithRelationInput>;
+  @Field(() => AddressWhereUniqueInput, { nullable: true })
+  cursor?: Prisma.AtLeast<AddressWhereUniqueInput, 'id'>;
 
-    @Field(() => AddressWhereUniqueInput, {nullable:true})
-    cursor?: Prisma.AtLeast<AddressWhereUniqueInput, 'id'>;
+  @Field(() => Int, { nullable: true })
+  take?: number;
 
-    @Field(() => Int, {nullable:true})
-    take?: number;
+  @Field(() => Int, { nullable: true })
+  skip?: number;
 
-    @Field(() => Int, {nullable:true})
-    skip?: number;
+  @Field(() => AddressCountAggregateInput, { nullable: true })
+  _count?: AddressCountAggregateInput;
 
-    @Field(() => AddressCountAggregateInput, {nullable:true})
-    _count?: AddressCountAggregateInput;
+  @Field(() => AddressAvgAggregateInput, { nullable: true })
+  _avg?: AddressAvgAggregateInput;
 
-    @Field(() => AddressAvgAggregateInput, {nullable:true})
-    _avg?: AddressAvgAggregateInput;
+  @Field(() => AddressSumAggregateInput, { nullable: true })
+  _sum?: AddressSumAggregateInput;
 
-    @Field(() => AddressSumAggregateInput, {nullable:true})
-    _sum?: AddressSumAggregateInput;
+  @Field(() => AddressMinAggregateInput, { nullable: true })
+  _min?: AddressMinAggregateInput;
 
-    @Field(() => AddressMinAggregateInput, {nullable:true})
-    _min?: AddressMinAggregateInput;
-
-    @Field(() => AddressMaxAggregateInput, {nullable:true})
-    _max?: AddressMaxAggregateInput;
+  @Field(() => AddressMaxAggregateInput, { nullable: true })
+  _max?: AddressMaxAggregateInput;
 }

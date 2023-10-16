@@ -4,7 +4,6 @@ import { Int } from '@nestjs/graphql';
 
 @ObjectType()
 export class AddressSumAggregate {
-
-    @Field(() => Int, {nullable:true})
-    postalCode?: number;
+  @Field(() => Int, { nullable: true })
+  postalCode?: number;
 }

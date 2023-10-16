@@ -7,17 +7,16 @@ import { ShipmentOrderByWithRelationInput } from '../shipment/shipment-order-by-
 
 @InputType()
 export class ArticleOnShipmentOrderByWithRelationInput {
+  @Field(() => SortOrder, { nullable: true })
+  articleId?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    articleId?: keyof typeof SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  shipmentId?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    shipmentId?: keyof typeof SortOrder;
+  @Field(() => ArticleOrderByWithRelationInput, { nullable: true })
+  @Type(() => ArticleOrderByWithRelationInput)
+  article?: ArticleOrderByWithRelationInput;
 
-    @Field(() => ArticleOrderByWithRelationInput, {nullable:true})
-    @Type(() => ArticleOrderByWithRelationInput)
-    article?: ArticleOrderByWithRelationInput;
-
-    @Field(() => ShipmentOrderByWithRelationInput, {nullable:true})
-    shipment?: ShipmentOrderByWithRelationInput;
+  @Field(() => ShipmentOrderByWithRelationInput, { nullable: true })
+  shipment?: ShipmentOrderByWithRelationInput;
 }

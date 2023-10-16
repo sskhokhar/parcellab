@@ -12,32 +12,31 @@ import { ShipmentMaxAggregateInput } from './shipment-max-aggregate.input';
 
 @ArgsType()
 export class ShipmentGroupByArgs {
+  @Field(() => ShipmentWhereInput, { nullable: true })
+  @Type(() => ShipmentWhereInput)
+  where?: ShipmentWhereInput;
 
-    @Field(() => ShipmentWhereInput, {nullable:true})
-    @Type(() => ShipmentWhereInput)
-    where?: ShipmentWhereInput;
+  @Field(() => [ShipmentOrderByWithAggregationInput], { nullable: true })
+  orderBy?: Array<ShipmentOrderByWithAggregationInput>;
 
-    @Field(() => [ShipmentOrderByWithAggregationInput], {nullable:true})
-    orderBy?: Array<ShipmentOrderByWithAggregationInput>;
+  @Field(() => [ShipmentScalarFieldEnum], { nullable: false })
+  by!: Array<keyof typeof ShipmentScalarFieldEnum>;
 
-    @Field(() => [ShipmentScalarFieldEnum], {nullable:false})
-    by!: Array<keyof typeof ShipmentScalarFieldEnum>;
+  @Field(() => ShipmentScalarWhereWithAggregatesInput, { nullable: true })
+  having?: ShipmentScalarWhereWithAggregatesInput;
 
-    @Field(() => ShipmentScalarWhereWithAggregatesInput, {nullable:true})
-    having?: ShipmentScalarWhereWithAggregatesInput;
+  @Field(() => Int, { nullable: true })
+  take?: number;
 
-    @Field(() => Int, {nullable:true})
-    take?: number;
+  @Field(() => Int, { nullable: true })
+  skip?: number;
 
-    @Field(() => Int, {nullable:true})
-    skip?: number;
+  @Field(() => ShipmentCountAggregateInput, { nullable: true })
+  _count?: ShipmentCountAggregateInput;
 
-    @Field(() => ShipmentCountAggregateInput, {nullable:true})
-    _count?: ShipmentCountAggregateInput;
+  @Field(() => ShipmentMinAggregateInput, { nullable: true })
+  _min?: ShipmentMinAggregateInput;
 
-    @Field(() => ShipmentMinAggregateInput, {nullable:true})
-    _min?: ShipmentMinAggregateInput;
-
-    @Field(() => ShipmentMaxAggregateInput, {nullable:true})
-    _max?: ShipmentMaxAggregateInput;
+  @Field(() => ShipmentMaxAggregateInput, { nullable: true })
+  _max?: ShipmentMaxAggregateInput;
 }

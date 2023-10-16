@@ -9,21 +9,20 @@ import { Type } from 'class-transformer';
 
 @InputType()
 export class ArticleUncheckedCreateWithoutShipmentsInput {
+  @Field(() => String, { nullable: true })
+  id?: string;
 
-    @Field(() => String, {nullable:true})
-    id?: string;
+  @Field(() => String, { nullable: false })
+  name!: string;
 
-    @Field(() => String, {nullable:false})
-    name!: string;
+  @Field(() => Int, { nullable: false })
+  qty!: number;
 
-    @Field(() => Int, {nullable:false})
-    qty!: number;
+  @Field(() => GraphQLDecimal, { nullable: false })
+  @Type(() => Object)
+  @Transform(transformToDecimal)
+  price!: Decimal;
 
-    @Field(() => GraphQLDecimal, {nullable:false})
-    @Type(() => Object)
-    @Transform(transformToDecimal)
-    price!: Decimal;
-
-    @Field(() => String, {nullable:false})
-    sku!: string;
+  @Field(() => String, { nullable: false })
+  sku!: string;
 }

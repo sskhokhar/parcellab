@@ -10,23 +10,25 @@ import { ArticleOnShipmentScalarFieldEnum } from './article-on-shipment-scalar-f
 
 @ArgsType()
 export class FindFirstArticleOnShipmentOrThrowArgs {
+  @Field(() => ArticleOnShipmentWhereInput, { nullable: true })
+  @Type(() => ArticleOnShipmentWhereInput)
+  where?: ArticleOnShipmentWhereInput;
 
-    @Field(() => ArticleOnShipmentWhereInput, {nullable:true})
-    @Type(() => ArticleOnShipmentWhereInput)
-    where?: ArticleOnShipmentWhereInput;
+  @Field(() => [ArticleOnShipmentOrderByWithRelationInput], { nullable: true })
+  orderBy?: Array<ArticleOnShipmentOrderByWithRelationInput>;
 
-    @Field(() => [ArticleOnShipmentOrderByWithRelationInput], {nullable:true})
-    orderBy?: Array<ArticleOnShipmentOrderByWithRelationInput>;
+  @Field(() => ArticleOnShipmentWhereUniqueInput, { nullable: true })
+  cursor?: Prisma.AtLeast<
+    ArticleOnShipmentWhereUniqueInput,
+    'articleId_shipmentId'
+  >;
 
-    @Field(() => ArticleOnShipmentWhereUniqueInput, {nullable:true})
-    cursor?: Prisma.AtLeast<ArticleOnShipmentWhereUniqueInput, 'articleId_shipmentId'>;
+  @Field(() => Int, { nullable: true })
+  take?: number;
 
-    @Field(() => Int, {nullable:true})
-    take?: number;
+  @Field(() => Int, { nullable: true })
+  skip?: number;
 
-    @Field(() => Int, {nullable:true})
-    skip?: number;
-
-    @Field(() => [ArticleOnShipmentScalarFieldEnum], {nullable:true})
-    distinct?: Array<keyof typeof ArticleOnShipmentScalarFieldEnum>;
+  @Field(() => [ArticleOnShipmentScalarFieldEnum], { nullable: true })
+  distinct?: Array<keyof typeof ArticleOnShipmentScalarFieldEnum>;
 }

@@ -5,25 +5,24 @@ import { IntWithAggregatesFilter } from '../prisma/int-with-aggregates-filter.in
 
 @InputType()
 export class AddressScalarWhereWithAggregatesInput {
+  @Field(() => [AddressScalarWhereWithAggregatesInput], { nullable: true })
+  AND?: Array<AddressScalarWhereWithAggregatesInput>;
 
-    @Field(() => [AddressScalarWhereWithAggregatesInput], {nullable:true})
-    AND?: Array<AddressScalarWhereWithAggregatesInput>;
+  @Field(() => [AddressScalarWhereWithAggregatesInput], { nullable: true })
+  OR?: Array<AddressScalarWhereWithAggregatesInput>;
 
-    @Field(() => [AddressScalarWhereWithAggregatesInput], {nullable:true})
-    OR?: Array<AddressScalarWhereWithAggregatesInput>;
+  @Field(() => [AddressScalarWhereWithAggregatesInput], { nullable: true })
+  NOT?: Array<AddressScalarWhereWithAggregatesInput>;
 
-    @Field(() => [AddressScalarWhereWithAggregatesInput], {nullable:true})
-    NOT?: Array<AddressScalarWhereWithAggregatesInput>;
+  @Field(() => StringWithAggregatesFilter, { nullable: true })
+  id?: StringWithAggregatesFilter;
 
-    @Field(() => StringWithAggregatesFilter, {nullable:true})
-    id?: StringWithAggregatesFilter;
+  @Field(() => StringWithAggregatesFilter, { nullable: true })
+  addressLine?: StringWithAggregatesFilter;
 
-    @Field(() => StringWithAggregatesFilter, {nullable:true})
-    addressLine?: StringWithAggregatesFilter;
+  @Field(() => IntWithAggregatesFilter, { nullable: true })
+  postalCode?: IntWithAggregatesFilter;
 
-    @Field(() => IntWithAggregatesFilter, {nullable:true})
-    postalCode?: IntWithAggregatesFilter;
-
-    @Field(() => StringWithAggregatesFilter, {nullable:true})
-    country?: StringWithAggregatesFilter;
+  @Field(() => StringWithAggregatesFilter, { nullable: true })
+  country?: StringWithAggregatesFilter;
 }

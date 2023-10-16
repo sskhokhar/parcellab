@@ -3,10 +3,9 @@ import { InputType } from '@nestjs/graphql';
 
 @InputType()
 export class ArticleSumAggregateInput {
+  @Field(() => Boolean, { nullable: true })
+  qty?: true;
 
-    @Field(() => Boolean, {nullable:true})
-    qty?: true;
-
-    @Field(() => Boolean, {nullable:true})
-    price?: true;
+  @Field(() => Boolean, { nullable: true })
+  price?: true;
 }

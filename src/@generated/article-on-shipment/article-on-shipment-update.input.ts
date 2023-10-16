@@ -6,11 +6,14 @@ import { ShipmentUpdateOneRequiredWithoutArticlesNestedInput } from '../shipment
 
 @InputType()
 export class ArticleOnShipmentUpdateInput {
+  @Field(() => ArticleUpdateOneRequiredWithoutShipmentsNestedInput, {
+    nullable: true,
+  })
+  @Type(() => ArticleUpdateOneRequiredWithoutShipmentsNestedInput)
+  article?: ArticleUpdateOneRequiredWithoutShipmentsNestedInput;
 
-    @Field(() => ArticleUpdateOneRequiredWithoutShipmentsNestedInput, {nullable:true})
-    @Type(() => ArticleUpdateOneRequiredWithoutShipmentsNestedInput)
-    article?: ArticleUpdateOneRequiredWithoutShipmentsNestedInput;
-
-    @Field(() => ShipmentUpdateOneRequiredWithoutArticlesNestedInput, {nullable:true})
-    shipment?: ShipmentUpdateOneRequiredWithoutArticlesNestedInput;
+  @Field(() => ShipmentUpdateOneRequiredWithoutArticlesNestedInput, {
+    nullable: true,
+  })
+  shipment?: ShipmentUpdateOneRequiredWithoutArticlesNestedInput;
 }

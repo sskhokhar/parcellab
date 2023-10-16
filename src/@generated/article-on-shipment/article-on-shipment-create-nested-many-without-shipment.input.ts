@@ -8,16 +8,21 @@ import { ArticleOnShipmentWhereUniqueInput } from './article-on-shipment-where-u
 
 @InputType()
 export class ArticleOnShipmentCreateNestedManyWithoutShipmentInput {
+  @Field(() => [ArticleOnShipmentCreateWithoutShipmentInput], {
+    nullable: true,
+  })
+  @Type(() => ArticleOnShipmentCreateWithoutShipmentInput)
+  create?: Array<ArticleOnShipmentCreateWithoutShipmentInput>;
 
-    @Field(() => [ArticleOnShipmentCreateWithoutShipmentInput], {nullable:true})
-    @Type(() => ArticleOnShipmentCreateWithoutShipmentInput)
-    create?: Array<ArticleOnShipmentCreateWithoutShipmentInput>;
+  @Field(() => [ArticleOnShipmentCreateOrConnectWithoutShipmentInput], {
+    nullable: true,
+  })
+  @Type(() => ArticleOnShipmentCreateOrConnectWithoutShipmentInput)
+  connectOrCreate?: Array<ArticleOnShipmentCreateOrConnectWithoutShipmentInput>;
 
-    @Field(() => [ArticleOnShipmentCreateOrConnectWithoutShipmentInput], {nullable:true})
-    @Type(() => ArticleOnShipmentCreateOrConnectWithoutShipmentInput)
-    connectOrCreate?: Array<ArticleOnShipmentCreateOrConnectWithoutShipmentInput>;
-
-    @Field(() => [ArticleOnShipmentWhereUniqueInput], {nullable:true})
-    @Type(() => ArticleOnShipmentWhereUniqueInput)
-    connect?: Array<Prisma.AtLeast<ArticleOnShipmentWhereUniqueInput, 'articleId_shipmentId'>>;
+  @Field(() => [ArticleOnShipmentWhereUniqueInput], { nullable: true })
+  @Type(() => ArticleOnShipmentWhereUniqueInput)
+  connect?: Array<
+    Prisma.AtLeast<ArticleOnShipmentWhereUniqueInput, 'articleId_shipmentId'>
+  >;
 }

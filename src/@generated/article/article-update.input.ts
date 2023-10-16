@@ -8,24 +8,25 @@ import { ArticleOnShipmentUpdateManyWithoutArticleNestedInput } from '../article
 
 @InputType()
 export class ArticleUpdateInput {
+  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+  id?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    id?: StringFieldUpdateOperationsInput;
+  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+  name?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    name?: StringFieldUpdateOperationsInput;
+  @Field(() => IntFieldUpdateOperationsInput, { nullable: true })
+  qty?: IntFieldUpdateOperationsInput;
 
-    @Field(() => IntFieldUpdateOperationsInput, {nullable:true})
-    qty?: IntFieldUpdateOperationsInput;
+  @Field(() => DecimalFieldUpdateOperationsInput, { nullable: true })
+  @Type(() => DecimalFieldUpdateOperationsInput)
+  price?: DecimalFieldUpdateOperationsInput;
 
-    @Field(() => DecimalFieldUpdateOperationsInput, {nullable:true})
-    @Type(() => DecimalFieldUpdateOperationsInput)
-    price?: DecimalFieldUpdateOperationsInput;
+  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+  sku?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    sku?: StringFieldUpdateOperationsInput;
-
-    @Field(() => ArticleOnShipmentUpdateManyWithoutArticleNestedInput, {nullable:true})
-    @Type(() => ArticleOnShipmentUpdateManyWithoutArticleNestedInput)
-    shipments?: ArticleOnShipmentUpdateManyWithoutArticleNestedInput;
+  @Field(() => ArticleOnShipmentUpdateManyWithoutArticleNestedInput, {
+    nullable: true,
+  })
+  @Type(() => ArticleOnShipmentUpdateManyWithoutArticleNestedInput)
+  shipments?: ArticleOnShipmentUpdateManyWithoutArticleNestedInput;
 }

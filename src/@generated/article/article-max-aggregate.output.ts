@@ -6,19 +6,18 @@ import { GraphQLDecimal } from 'prisma-graphql-type-decimal';
 
 @ObjectType()
 export class ArticleMaxAggregate {
+  @Field(() => String, { nullable: true })
+  id?: string;
 
-    @Field(() => String, {nullable:true})
-    id?: string;
+  @Field(() => String, { nullable: true })
+  name?: string;
 
-    @Field(() => String, {nullable:true})
-    name?: string;
+  @Field(() => Int, { nullable: true })
+  qty?: number;
 
-    @Field(() => Int, {nullable:true})
-    qty?: number;
+  @Field(() => GraphQLDecimal, { nullable: true })
+  price?: Decimal;
 
-    @Field(() => GraphQLDecimal, {nullable:true})
-    price?: Decimal;
-
-    @Field(() => String, {nullable:true})
-    sku?: string;
+  @Field(() => String, { nullable: true })
+  sku?: string;
 }

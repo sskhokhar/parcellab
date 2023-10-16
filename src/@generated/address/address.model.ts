@@ -7,25 +7,24 @@ import { AddressCount } from './address-count.output';
 
 @ObjectType()
 export class Address {
+  @Field(() => ID, { nullable: false })
+  id!: string;
 
-    @Field(() => ID, {nullable:false})
-    id!: string;
+  @Field(() => String, { nullable: false })
+  addressLine!: string;
 
-    @Field(() => String, {nullable:false})
-    addressLine!: string;
+  @Field(() => Int, { nullable: false })
+  postalCode!: number;
 
-    @Field(() => Int, {nullable:false})
-    postalCode!: number;
+  @Field(() => String, { nullable: false })
+  country!: string;
 
-    @Field(() => String, {nullable:false})
-    country!: string;
+  @Field(() => [Shipment], { nullable: true })
+  receiverShipments?: Array<Shipment>;
 
-    @Field(() => [Shipment], {nullable:true})
-    receiverShipments?: Array<Shipment>;
+  @Field(() => [Shipment], { nullable: true })
+  senderShipments?: Array<Shipment>;
 
-    @Field(() => [Shipment], {nullable:true})
-    senderShipments?: Array<Shipment>;
-
-    @Field(() => AddressCount, {nullable:false})
-    _count?: AddressCount;
+  @Field(() => AddressCount, { nullable: false })
+  _count?: AddressCount;
 }

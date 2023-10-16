@@ -8,16 +8,18 @@ import { ArticleOnShipmentUpdateInput } from './article-on-shipment-update.input
 
 @ArgsType()
 export class UpsertOneArticleOnShipmentArgs {
+  @Field(() => ArticleOnShipmentWhereUniqueInput, { nullable: false })
+  @Type(() => ArticleOnShipmentWhereUniqueInput)
+  where!: Prisma.AtLeast<
+    ArticleOnShipmentWhereUniqueInput,
+    'articleId_shipmentId'
+  >;
 
-    @Field(() => ArticleOnShipmentWhereUniqueInput, {nullable:false})
-    @Type(() => ArticleOnShipmentWhereUniqueInput)
-    where!: Prisma.AtLeast<ArticleOnShipmentWhereUniqueInput, 'articleId_shipmentId'>;
+  @Field(() => ArticleOnShipmentCreateInput, { nullable: false })
+  @Type(() => ArticleOnShipmentCreateInput)
+  create!: ArticleOnShipmentCreateInput;
 
-    @Field(() => ArticleOnShipmentCreateInput, {nullable:false})
-    @Type(() => ArticleOnShipmentCreateInput)
-    create!: ArticleOnShipmentCreateInput;
-
-    @Field(() => ArticleOnShipmentUpdateInput, {nullable:false})
-    @Type(() => ArticleOnShipmentUpdateInput)
-    update!: ArticleOnShipmentUpdateInput;
+  @Field(() => ArticleOnShipmentUpdateInput, { nullable: false })
+  @Type(() => ArticleOnShipmentUpdateInput)
+  update!: ArticleOnShipmentUpdateInput;
 }

@@ -7,12 +7,11 @@ import { ShipmentCreateWithoutArticlesInput } from './shipment-create-without-ar
 
 @InputType()
 export class ShipmentCreateOrConnectWithoutArticlesInput {
+  @Field(() => ShipmentWhereUniqueInput, { nullable: false })
+  @Type(() => ShipmentWhereUniqueInput)
+  where!: Prisma.AtLeast<ShipmentWhereUniqueInput, 'id' | 'trackingNumber'>;
 
-    @Field(() => ShipmentWhereUniqueInput, {nullable:false})
-    @Type(() => ShipmentWhereUniqueInput)
-    where!: Prisma.AtLeast<ShipmentWhereUniqueInput, 'id' | 'trackingNumber'>;
-
-    @Field(() => ShipmentCreateWithoutArticlesInput, {nullable:false})
-    @Type(() => ShipmentCreateWithoutArticlesInput)
-    create!: ShipmentCreateWithoutArticlesInput;
+  @Field(() => ShipmentCreateWithoutArticlesInput, { nullable: false })
+  @Type(() => ShipmentCreateWithoutArticlesInput)
+  create!: ShipmentCreateWithoutArticlesInput;
 }

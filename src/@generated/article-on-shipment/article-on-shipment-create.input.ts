@@ -6,11 +6,10 @@ import { ShipmentCreateNestedOneWithoutArticlesInput } from '../shipment/shipmen
 
 @InputType()
 export class ArticleOnShipmentCreateInput {
+  @Field(() => ArticleCreateNestedOneWithoutShipmentsInput, { nullable: false })
+  @Type(() => ArticleCreateNestedOneWithoutShipmentsInput)
+  article!: ArticleCreateNestedOneWithoutShipmentsInput;
 
-    @Field(() => ArticleCreateNestedOneWithoutShipmentsInput, {nullable:false})
-    @Type(() => ArticleCreateNestedOneWithoutShipmentsInput)
-    article!: ArticleCreateNestedOneWithoutShipmentsInput;
-
-    @Field(() => ShipmentCreateNestedOneWithoutArticlesInput, {nullable:false})
-    shipment!: ShipmentCreateNestedOneWithoutArticlesInput;
+  @Field(() => ShipmentCreateNestedOneWithoutArticlesInput, { nullable: false })
+  shipment!: ShipmentCreateNestedOneWithoutArticlesInput;
 }

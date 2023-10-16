@@ -7,32 +7,31 @@ import { DecimalWithAggregatesFilter } from '../prisma/decimal-with-aggregates-f
 
 @InputType()
 export class ArticleScalarWhereWithAggregatesInput {
+  @Field(() => [ArticleScalarWhereWithAggregatesInput], { nullable: true })
+  @Type(() => ArticleScalarWhereWithAggregatesInput)
+  AND?: Array<ArticleScalarWhereWithAggregatesInput>;
 
-    @Field(() => [ArticleScalarWhereWithAggregatesInput], {nullable:true})
-    @Type(() => ArticleScalarWhereWithAggregatesInput)
-    AND?: Array<ArticleScalarWhereWithAggregatesInput>;
+  @Field(() => [ArticleScalarWhereWithAggregatesInput], { nullable: true })
+  @Type(() => ArticleScalarWhereWithAggregatesInput)
+  OR?: Array<ArticleScalarWhereWithAggregatesInput>;
 
-    @Field(() => [ArticleScalarWhereWithAggregatesInput], {nullable:true})
-    @Type(() => ArticleScalarWhereWithAggregatesInput)
-    OR?: Array<ArticleScalarWhereWithAggregatesInput>;
+  @Field(() => [ArticleScalarWhereWithAggregatesInput], { nullable: true })
+  @Type(() => ArticleScalarWhereWithAggregatesInput)
+  NOT?: Array<ArticleScalarWhereWithAggregatesInput>;
 
-    @Field(() => [ArticleScalarWhereWithAggregatesInput], {nullable:true})
-    @Type(() => ArticleScalarWhereWithAggregatesInput)
-    NOT?: Array<ArticleScalarWhereWithAggregatesInput>;
+  @Field(() => StringWithAggregatesFilter, { nullable: true })
+  id?: StringWithAggregatesFilter;
 
-    @Field(() => StringWithAggregatesFilter, {nullable:true})
-    id?: StringWithAggregatesFilter;
+  @Field(() => StringWithAggregatesFilter, { nullable: true })
+  name?: StringWithAggregatesFilter;
 
-    @Field(() => StringWithAggregatesFilter, {nullable:true})
-    name?: StringWithAggregatesFilter;
+  @Field(() => IntWithAggregatesFilter, { nullable: true })
+  qty?: IntWithAggregatesFilter;
 
-    @Field(() => IntWithAggregatesFilter, {nullable:true})
-    qty?: IntWithAggregatesFilter;
+  @Field(() => DecimalWithAggregatesFilter, { nullable: true })
+  @Type(() => DecimalWithAggregatesFilter)
+  price?: DecimalWithAggregatesFilter;
 
-    @Field(() => DecimalWithAggregatesFilter, {nullable:true})
-    @Type(() => DecimalWithAggregatesFilter)
-    price?: DecimalWithAggregatesFilter;
-
-    @Field(() => StringWithAggregatesFilter, {nullable:true})
-    sku?: StringWithAggregatesFilter;
+  @Field(() => StringWithAggregatesFilter, { nullable: true })
+  sku?: StringWithAggregatesFilter;
 }

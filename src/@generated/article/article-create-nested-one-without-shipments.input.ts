@@ -8,16 +8,15 @@ import { ArticleWhereUniqueInput } from './article-where-unique.input';
 
 @InputType()
 export class ArticleCreateNestedOneWithoutShipmentsInput {
+  @Field(() => ArticleCreateWithoutShipmentsInput, { nullable: true })
+  @Type(() => ArticleCreateWithoutShipmentsInput)
+  create?: ArticleCreateWithoutShipmentsInput;
 
-    @Field(() => ArticleCreateWithoutShipmentsInput, {nullable:true})
-    @Type(() => ArticleCreateWithoutShipmentsInput)
-    create?: ArticleCreateWithoutShipmentsInput;
+  @Field(() => ArticleCreateOrConnectWithoutShipmentsInput, { nullable: true })
+  @Type(() => ArticleCreateOrConnectWithoutShipmentsInput)
+  connectOrCreate?: ArticleCreateOrConnectWithoutShipmentsInput;
 
-    @Field(() => ArticleCreateOrConnectWithoutShipmentsInput, {nullable:true})
-    @Type(() => ArticleCreateOrConnectWithoutShipmentsInput)
-    connectOrCreate?: ArticleCreateOrConnectWithoutShipmentsInput;
-
-    @Field(() => ArticleWhereUniqueInput, {nullable:true})
-    @Type(() => ArticleWhereUniqueInput)
-    connect?: Prisma.AtLeast<ArticleWhereUniqueInput, 'id' | 'sku'>;
+  @Field(() => ArticleWhereUniqueInput, { nullable: true })
+  @Type(() => ArticleWhereUniqueInput)
+  connect?: Prisma.AtLeast<ArticleWhereUniqueInput, 'id' | 'sku'>;
 }

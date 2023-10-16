@@ -7,16 +7,15 @@ import { AddressWhereInput } from './address-where.input';
 
 @InputType()
 export class AddressUpsertWithoutSenderShipmentsInput {
+  @Field(() => AddressUpdateWithoutSenderShipmentsInput, { nullable: false })
+  @Type(() => AddressUpdateWithoutSenderShipmentsInput)
+  update!: AddressUpdateWithoutSenderShipmentsInput;
 
-    @Field(() => AddressUpdateWithoutSenderShipmentsInput, {nullable:false})
-    @Type(() => AddressUpdateWithoutSenderShipmentsInput)
-    update!: AddressUpdateWithoutSenderShipmentsInput;
+  @Field(() => AddressCreateWithoutSenderShipmentsInput, { nullable: false })
+  @Type(() => AddressCreateWithoutSenderShipmentsInput)
+  create!: AddressCreateWithoutSenderShipmentsInput;
 
-    @Field(() => AddressCreateWithoutSenderShipmentsInput, {nullable:false})
-    @Type(() => AddressCreateWithoutSenderShipmentsInput)
-    create!: AddressCreateWithoutSenderShipmentsInput;
-
-    @Field(() => AddressWhereInput, {nullable:true})
-    @Type(() => AddressWhereInput)
-    where?: AddressWhereInput;
+  @Field(() => AddressWhereInput, { nullable: true })
+  @Type(() => AddressWhereInput)
+  where?: AddressWhereInput;
 }

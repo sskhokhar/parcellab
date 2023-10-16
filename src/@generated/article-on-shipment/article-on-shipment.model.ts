@@ -5,16 +5,15 @@ import { Shipment } from '../shipment/shipment.model';
 
 @ObjectType()
 export class ArticleOnShipment {
+  @Field(() => String, { nullable: false })
+  articleId!: string;
 
-    @Field(() => String, {nullable:false})
-    articleId!: string;
+  @Field(() => String, { nullable: false })
+  shipmentId!: string;
 
-    @Field(() => String, {nullable:false})
-    shipmentId!: string;
+  @Field(() => Article, { nullable: false })
+  article?: Article;
 
-    @Field(() => Article, {nullable:false})
-    article?: Article;
-
-    @Field(() => Shipment, {nullable:false})
-    shipment?: Shipment;
+  @Field(() => Shipment, { nullable: false })
+  shipment?: Shipment;
 }

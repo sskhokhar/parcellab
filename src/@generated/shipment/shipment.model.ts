@@ -7,31 +7,30 @@ import { ShipmentCount } from './shipment-count.output';
 
 @ObjectType()
 export class Shipment {
+  @Field(() => ID, { nullable: false })
+  id!: string;
 
-    @Field(() => ID, {nullable:false})
-    id!: string;
+  @Field(() => String, { nullable: false })
+  trackingNumber!: string;
 
-    @Field(() => String, {nullable:false})
-    trackingNumber!: string;
+  @Field(() => String, { nullable: false })
+  carrier!: string;
 
-    @Field(() => String, {nullable:false})
-    carrier!: string;
+  @Field(() => String, { nullable: false })
+  senderAddressId!: string;
 
-    @Field(() => String, {nullable:false})
-    senderAddressId!: string;
+  @Field(() => String, { nullable: false })
+  receiverAddressId!: string;
 
-    @Field(() => String, {nullable:false})
-    receiverAddressId!: string;
+  @Field(() => [ArticleOnShipment], { nullable: true })
+  articles?: Array<ArticleOnShipment>;
 
-    @Field(() => [ArticleOnShipment], {nullable:true})
-    articles?: Array<ArticleOnShipment>;
+  @Field(() => Address, { nullable: false })
+  senderAddress?: Address;
 
-    @Field(() => Address, {nullable:false})
-    senderAddress?: Address;
+  @Field(() => Address, { nullable: false })
+  receiverAddress?: Address;
 
-    @Field(() => Address, {nullable:false})
-    receiverAddress?: Address;
-
-    @Field(() => ShipmentCount, {nullable:false})
-    _count?: ShipmentCount;
+  @Field(() => ShipmentCount, { nullable: false })
+  _count?: ShipmentCount;
 }

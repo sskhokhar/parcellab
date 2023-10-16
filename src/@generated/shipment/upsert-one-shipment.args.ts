@@ -8,16 +8,15 @@ import { ShipmentUpdateInput } from './shipment-update.input';
 
 @ArgsType()
 export class UpsertOneShipmentArgs {
+  @Field(() => ShipmentWhereUniqueInput, { nullable: false })
+  @Type(() => ShipmentWhereUniqueInput)
+  where!: Prisma.AtLeast<ShipmentWhereUniqueInput, 'id' | 'trackingNumber'>;
 
-    @Field(() => ShipmentWhereUniqueInput, {nullable:false})
-    @Type(() => ShipmentWhereUniqueInput)
-    where!: Prisma.AtLeast<ShipmentWhereUniqueInput, 'id' | 'trackingNumber'>;
+  @Field(() => ShipmentCreateInput, { nullable: false })
+  @Type(() => ShipmentCreateInput)
+  create!: ShipmentCreateInput;
 
-    @Field(() => ShipmentCreateInput, {nullable:false})
-    @Type(() => ShipmentCreateInput)
-    create!: ShipmentCreateInput;
-
-    @Field(() => ShipmentUpdateInput, {nullable:false})
-    @Type(() => ShipmentUpdateInput)
-    update!: ShipmentUpdateInput;
+  @Field(() => ShipmentUpdateInput, { nullable: false })
+  @Type(() => ShipmentUpdateInput)
+  update!: ShipmentUpdateInput;
 }

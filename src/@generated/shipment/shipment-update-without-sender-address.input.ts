@@ -7,20 +7,23 @@ import { AddressUpdateOneRequiredWithoutReceiverShipmentsNestedInput } from '../
 
 @InputType()
 export class ShipmentUpdateWithoutSenderAddressInput {
+  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+  id?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    id?: StringFieldUpdateOperationsInput;
+  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+  trackingNumber?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    trackingNumber?: StringFieldUpdateOperationsInput;
+  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+  carrier?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    carrier?: StringFieldUpdateOperationsInput;
+  @Field(() => ArticleOnShipmentUpdateManyWithoutShipmentNestedInput, {
+    nullable: true,
+  })
+  @Type(() => ArticleOnShipmentUpdateManyWithoutShipmentNestedInput)
+  articles?: ArticleOnShipmentUpdateManyWithoutShipmentNestedInput;
 
-    @Field(() => ArticleOnShipmentUpdateManyWithoutShipmentNestedInput, {nullable:true})
-    @Type(() => ArticleOnShipmentUpdateManyWithoutShipmentNestedInput)
-    articles?: ArticleOnShipmentUpdateManyWithoutShipmentNestedInput;
-
-    @Field(() => AddressUpdateOneRequiredWithoutReceiverShipmentsNestedInput, {nullable:true})
-    receiverAddress?: AddressUpdateOneRequiredWithoutReceiverShipmentsNestedInput;
+  @Field(() => AddressUpdateOneRequiredWithoutReceiverShipmentsNestedInput, {
+    nullable: true,
+  })
+  receiverAddress?: AddressUpdateOneRequiredWithoutReceiverShipmentsNestedInput;
 }

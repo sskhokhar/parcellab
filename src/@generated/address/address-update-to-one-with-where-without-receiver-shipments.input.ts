@@ -6,12 +6,11 @@ import { AddressUpdateWithoutReceiverShipmentsInput } from './address-update-wit
 
 @InputType()
 export class AddressUpdateToOneWithWhereWithoutReceiverShipmentsInput {
+  @Field(() => AddressWhereInput, { nullable: true })
+  @Type(() => AddressWhereInput)
+  where?: AddressWhereInput;
 
-    @Field(() => AddressWhereInput, {nullable:true})
-    @Type(() => AddressWhereInput)
-    where?: AddressWhereInput;
-
-    @Field(() => AddressUpdateWithoutReceiverShipmentsInput, {nullable:false})
-    @Type(() => AddressUpdateWithoutReceiverShipmentsInput)
-    data!: AddressUpdateWithoutReceiverShipmentsInput;
+  @Field(() => AddressUpdateWithoutReceiverShipmentsInput, { nullable: false })
+  @Type(() => AddressUpdateWithoutReceiverShipmentsInput)
+  data!: AddressUpdateWithoutReceiverShipmentsInput;
 }

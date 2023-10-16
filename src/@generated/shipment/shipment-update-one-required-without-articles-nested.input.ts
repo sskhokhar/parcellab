@@ -10,24 +10,25 @@ import { ShipmentUpdateToOneWithWhereWithoutArticlesInput } from './shipment-upd
 
 @InputType()
 export class ShipmentUpdateOneRequiredWithoutArticlesNestedInput {
+  @Field(() => ShipmentCreateWithoutArticlesInput, { nullable: true })
+  @Type(() => ShipmentCreateWithoutArticlesInput)
+  create?: ShipmentCreateWithoutArticlesInput;
 
-    @Field(() => ShipmentCreateWithoutArticlesInput, {nullable:true})
-    @Type(() => ShipmentCreateWithoutArticlesInput)
-    create?: ShipmentCreateWithoutArticlesInput;
+  @Field(() => ShipmentCreateOrConnectWithoutArticlesInput, { nullable: true })
+  @Type(() => ShipmentCreateOrConnectWithoutArticlesInput)
+  connectOrCreate?: ShipmentCreateOrConnectWithoutArticlesInput;
 
-    @Field(() => ShipmentCreateOrConnectWithoutArticlesInput, {nullable:true})
-    @Type(() => ShipmentCreateOrConnectWithoutArticlesInput)
-    connectOrCreate?: ShipmentCreateOrConnectWithoutArticlesInput;
+  @Field(() => ShipmentUpsertWithoutArticlesInput, { nullable: true })
+  @Type(() => ShipmentUpsertWithoutArticlesInput)
+  upsert?: ShipmentUpsertWithoutArticlesInput;
 
-    @Field(() => ShipmentUpsertWithoutArticlesInput, {nullable:true})
-    @Type(() => ShipmentUpsertWithoutArticlesInput)
-    upsert?: ShipmentUpsertWithoutArticlesInput;
+  @Field(() => ShipmentWhereUniqueInput, { nullable: true })
+  @Type(() => ShipmentWhereUniqueInput)
+  connect?: Prisma.AtLeast<ShipmentWhereUniqueInput, 'id' | 'trackingNumber'>;
 
-    @Field(() => ShipmentWhereUniqueInput, {nullable:true})
-    @Type(() => ShipmentWhereUniqueInput)
-    connect?: Prisma.AtLeast<ShipmentWhereUniqueInput, 'id' | 'trackingNumber'>;
-
-    @Field(() => ShipmentUpdateToOneWithWhereWithoutArticlesInput, {nullable:true})
-    @Type(() => ShipmentUpdateToOneWithWhereWithoutArticlesInput)
-    update?: ShipmentUpdateToOneWithWhereWithoutArticlesInput;
+  @Field(() => ShipmentUpdateToOneWithWhereWithoutArticlesInput, {
+    nullable: true,
+  })
+  @Type(() => ShipmentUpdateToOneWithWhereWithoutArticlesInput)
+  update?: ShipmentUpdateToOneWithWhereWithoutArticlesInput;
 }

@@ -4,7 +4,6 @@ import { Int } from '@nestjs/graphql';
 
 @ObjectType()
 export class ArticleCount {
-
-    @Field(() => Int, {nullable:false})
-    shipments?: number;
+  @Field(() => Int, { nullable: false })
+  shipments?: number;
 }

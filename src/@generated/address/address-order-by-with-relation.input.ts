@@ -5,22 +5,21 @@ import { ShipmentOrderByRelationAggregateInput } from '../shipment/shipment-orde
 
 @InputType()
 export class AddressOrderByWithRelationInput {
+  @Field(() => SortOrder, { nullable: true })
+  id?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    id?: keyof typeof SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  addressLine?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    addressLine?: keyof typeof SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  postalCode?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    postalCode?: keyof typeof SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  country?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    country?: keyof typeof SortOrder;
+  @Field(() => ShipmentOrderByRelationAggregateInput, { nullable: true })
+  receiverShipments?: ShipmentOrderByRelationAggregateInput;
 
-    @Field(() => ShipmentOrderByRelationAggregateInput, {nullable:true})
-    receiverShipments?: ShipmentOrderByRelationAggregateInput;
-
-    @Field(() => ShipmentOrderByRelationAggregateInput, {nullable:true})
-    senderShipments?: ShipmentOrderByRelationAggregateInput;
+  @Field(() => ShipmentOrderByRelationAggregateInput, { nullable: true })
+  senderShipments?: ShipmentOrderByRelationAggregateInput;
 }

@@ -6,19 +6,20 @@ import { ShipmentUncheckedUpdateManyWithoutReceiverAddressNestedInput } from '..
 
 @InputType()
 export class AddressUncheckedUpdateWithoutSenderShipmentsInput {
+  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+  id?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    id?: StringFieldUpdateOperationsInput;
+  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+  addressLine?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    addressLine?: StringFieldUpdateOperationsInput;
+  @Field(() => IntFieldUpdateOperationsInput, { nullable: true })
+  postalCode?: IntFieldUpdateOperationsInput;
 
-    @Field(() => IntFieldUpdateOperationsInput, {nullable:true})
-    postalCode?: IntFieldUpdateOperationsInput;
+  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+  country?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    country?: StringFieldUpdateOperationsInput;
-
-    @Field(() => ShipmentUncheckedUpdateManyWithoutReceiverAddressNestedInput, {nullable:true})
-    receiverShipments?: ShipmentUncheckedUpdateManyWithoutReceiverAddressNestedInput;
+  @Field(() => ShipmentUncheckedUpdateManyWithoutReceiverAddressNestedInput, {
+    nullable: true,
+  })
+  receiverShipments?: ShipmentUncheckedUpdateManyWithoutReceiverAddressNestedInput;
 }

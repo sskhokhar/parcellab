@@ -6,10 +6,9 @@ import { GraphQLDecimal } from 'prisma-graphql-type-decimal';
 
 @ObjectType()
 export class ArticleAvgAggregate {
+  @Field(() => Float, { nullable: true })
+  qty?: number;
 
-    @Field(() => Float, {nullable:true})
-    qty?: number;
-
-    @Field(() => GraphQLDecimal, {nullable:true})
-    price?: Decimal;
+  @Field(() => GraphQLDecimal, { nullable: true })
+  price?: Decimal;
 }

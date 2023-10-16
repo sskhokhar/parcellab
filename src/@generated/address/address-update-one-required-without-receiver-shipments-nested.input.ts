@@ -10,24 +10,27 @@ import { AddressUpdateToOneWithWhereWithoutReceiverShipmentsInput } from './addr
 
 @InputType()
 export class AddressUpdateOneRequiredWithoutReceiverShipmentsNestedInput {
+  @Field(() => AddressCreateWithoutReceiverShipmentsInput, { nullable: true })
+  @Type(() => AddressCreateWithoutReceiverShipmentsInput)
+  create?: AddressCreateWithoutReceiverShipmentsInput;
 
-    @Field(() => AddressCreateWithoutReceiverShipmentsInput, {nullable:true})
-    @Type(() => AddressCreateWithoutReceiverShipmentsInput)
-    create?: AddressCreateWithoutReceiverShipmentsInput;
+  @Field(() => AddressCreateOrConnectWithoutReceiverShipmentsInput, {
+    nullable: true,
+  })
+  @Type(() => AddressCreateOrConnectWithoutReceiverShipmentsInput)
+  connectOrCreate?: AddressCreateOrConnectWithoutReceiverShipmentsInput;
 
-    @Field(() => AddressCreateOrConnectWithoutReceiverShipmentsInput, {nullable:true})
-    @Type(() => AddressCreateOrConnectWithoutReceiverShipmentsInput)
-    connectOrCreate?: AddressCreateOrConnectWithoutReceiverShipmentsInput;
+  @Field(() => AddressUpsertWithoutReceiverShipmentsInput, { nullable: true })
+  @Type(() => AddressUpsertWithoutReceiverShipmentsInput)
+  upsert?: AddressUpsertWithoutReceiverShipmentsInput;
 
-    @Field(() => AddressUpsertWithoutReceiverShipmentsInput, {nullable:true})
-    @Type(() => AddressUpsertWithoutReceiverShipmentsInput)
-    upsert?: AddressUpsertWithoutReceiverShipmentsInput;
+  @Field(() => AddressWhereUniqueInput, { nullable: true })
+  @Type(() => AddressWhereUniqueInput)
+  connect?: Prisma.AtLeast<AddressWhereUniqueInput, 'id'>;
 
-    @Field(() => AddressWhereUniqueInput, {nullable:true})
-    @Type(() => AddressWhereUniqueInput)
-    connect?: Prisma.AtLeast<AddressWhereUniqueInput, 'id'>;
-
-    @Field(() => AddressUpdateToOneWithWhereWithoutReceiverShipmentsInput, {nullable:true})
-    @Type(() => AddressUpdateToOneWithWhereWithoutReceiverShipmentsInput)
-    update?: AddressUpdateToOneWithWhereWithoutReceiverShipmentsInput;
+  @Field(() => AddressUpdateToOneWithWhereWithoutReceiverShipmentsInput, {
+    nullable: true,
+  })
+  @Type(() => AddressUpdateToOneWithWhereWithoutReceiverShipmentsInput)
+  update?: AddressUpdateToOneWithWhereWithoutReceiverShipmentsInput;
 }

@@ -6,22 +6,25 @@ import { ShipmentUncheckedCreateNestedManyWithoutSenderAddressInput } from '../s
 
 @InputType()
 export class AddressUncheckedCreateInput {
+  @Field(() => String, { nullable: true })
+  id?: string;
 
-    @Field(() => String, {nullable:true})
-    id?: string;
+  @Field(() => String, { nullable: false })
+  addressLine!: string;
 
-    @Field(() => String, {nullable:false})
-    addressLine!: string;
+  @Field(() => Int, { nullable: false })
+  postalCode!: number;
 
-    @Field(() => Int, {nullable:false})
-    postalCode!: number;
+  @Field(() => String, { nullable: false })
+  country!: string;
 
-    @Field(() => String, {nullable:false})
-    country!: string;
+  @Field(() => ShipmentUncheckedCreateNestedManyWithoutReceiverAddressInput, {
+    nullable: true,
+  })
+  receiverShipments?: ShipmentUncheckedCreateNestedManyWithoutReceiverAddressInput;
 
-    @Field(() => ShipmentUncheckedCreateNestedManyWithoutReceiverAddressInput, {nullable:true})
-    receiverShipments?: ShipmentUncheckedCreateNestedManyWithoutReceiverAddressInput;
-
-    @Field(() => ShipmentUncheckedCreateNestedManyWithoutSenderAddressInput, {nullable:true})
-    senderShipments?: ShipmentUncheckedCreateNestedManyWithoutSenderAddressInput;
+  @Field(() => ShipmentUncheckedCreateNestedManyWithoutSenderAddressInput, {
+    nullable: true,
+  })
+  senderShipments?: ShipmentUncheckedCreateNestedManyWithoutSenderAddressInput;
 }

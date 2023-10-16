@@ -7,12 +7,11 @@ import { ArticleCreateWithoutShipmentsInput } from './article-create-without-shi
 
 @InputType()
 export class ArticleCreateOrConnectWithoutShipmentsInput {
+  @Field(() => ArticleWhereUniqueInput, { nullable: false })
+  @Type(() => ArticleWhereUniqueInput)
+  where!: Prisma.AtLeast<ArticleWhereUniqueInput, 'id' | 'sku'>;
 
-    @Field(() => ArticleWhereUniqueInput, {nullable:false})
-    @Type(() => ArticleWhereUniqueInput)
-    where!: Prisma.AtLeast<ArticleWhereUniqueInput, 'id' | 'sku'>;
-
-    @Field(() => ArticleCreateWithoutShipmentsInput, {nullable:false})
-    @Type(() => ArticleCreateWithoutShipmentsInput)
-    create!: ArticleCreateWithoutShipmentsInput;
+  @Field(() => ArticleCreateWithoutShipmentsInput, { nullable: false })
+  @Type(() => ArticleCreateWithoutShipmentsInput)
+  create!: ArticleCreateWithoutShipmentsInput;
 }

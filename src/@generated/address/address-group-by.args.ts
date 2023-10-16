@@ -14,38 +14,37 @@ import { AddressMaxAggregateInput } from './address-max-aggregate.input';
 
 @ArgsType()
 export class AddressGroupByArgs {
+  @Field(() => AddressWhereInput, { nullable: true })
+  @Type(() => AddressWhereInput)
+  where?: AddressWhereInput;
 
-    @Field(() => AddressWhereInput, {nullable:true})
-    @Type(() => AddressWhereInput)
-    where?: AddressWhereInput;
+  @Field(() => [AddressOrderByWithAggregationInput], { nullable: true })
+  orderBy?: Array<AddressOrderByWithAggregationInput>;
 
-    @Field(() => [AddressOrderByWithAggregationInput], {nullable:true})
-    orderBy?: Array<AddressOrderByWithAggregationInput>;
+  @Field(() => [AddressScalarFieldEnum], { nullable: false })
+  by!: Array<keyof typeof AddressScalarFieldEnum>;
 
-    @Field(() => [AddressScalarFieldEnum], {nullable:false})
-    by!: Array<keyof typeof AddressScalarFieldEnum>;
+  @Field(() => AddressScalarWhereWithAggregatesInput, { nullable: true })
+  having?: AddressScalarWhereWithAggregatesInput;
 
-    @Field(() => AddressScalarWhereWithAggregatesInput, {nullable:true})
-    having?: AddressScalarWhereWithAggregatesInput;
+  @Field(() => Int, { nullable: true })
+  take?: number;
 
-    @Field(() => Int, {nullable:true})
-    take?: number;
+  @Field(() => Int, { nullable: true })
+  skip?: number;
 
-    @Field(() => Int, {nullable:true})
-    skip?: number;
+  @Field(() => AddressCountAggregateInput, { nullable: true })
+  _count?: AddressCountAggregateInput;
 
-    @Field(() => AddressCountAggregateInput, {nullable:true})
-    _count?: AddressCountAggregateInput;
+  @Field(() => AddressAvgAggregateInput, { nullable: true })
+  _avg?: AddressAvgAggregateInput;
 
-    @Field(() => AddressAvgAggregateInput, {nullable:true})
-    _avg?: AddressAvgAggregateInput;
+  @Field(() => AddressSumAggregateInput, { nullable: true })
+  _sum?: AddressSumAggregateInput;
 
-    @Field(() => AddressSumAggregateInput, {nullable:true})
-    _sum?: AddressSumAggregateInput;
+  @Field(() => AddressMinAggregateInput, { nullable: true })
+  _min?: AddressMinAggregateInput;
 
-    @Field(() => AddressMinAggregateInput, {nullable:true})
-    _min?: AddressMinAggregateInput;
-
-    @Field(() => AddressMaxAggregateInput, {nullable:true})
-    _max?: AddressMaxAggregateInput;
+  @Field(() => AddressMaxAggregateInput, { nullable: true })
+  _max?: AddressMaxAggregateInput;
 }

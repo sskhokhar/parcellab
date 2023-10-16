@@ -10,24 +10,25 @@ import { ArticleUpdateToOneWithWhereWithoutShipmentsInput } from './article-upda
 
 @InputType()
 export class ArticleUpdateOneRequiredWithoutShipmentsNestedInput {
+  @Field(() => ArticleCreateWithoutShipmentsInput, { nullable: true })
+  @Type(() => ArticleCreateWithoutShipmentsInput)
+  create?: ArticleCreateWithoutShipmentsInput;
 
-    @Field(() => ArticleCreateWithoutShipmentsInput, {nullable:true})
-    @Type(() => ArticleCreateWithoutShipmentsInput)
-    create?: ArticleCreateWithoutShipmentsInput;
+  @Field(() => ArticleCreateOrConnectWithoutShipmentsInput, { nullable: true })
+  @Type(() => ArticleCreateOrConnectWithoutShipmentsInput)
+  connectOrCreate?: ArticleCreateOrConnectWithoutShipmentsInput;
 
-    @Field(() => ArticleCreateOrConnectWithoutShipmentsInput, {nullable:true})
-    @Type(() => ArticleCreateOrConnectWithoutShipmentsInput)
-    connectOrCreate?: ArticleCreateOrConnectWithoutShipmentsInput;
+  @Field(() => ArticleUpsertWithoutShipmentsInput, { nullable: true })
+  @Type(() => ArticleUpsertWithoutShipmentsInput)
+  upsert?: ArticleUpsertWithoutShipmentsInput;
 
-    @Field(() => ArticleUpsertWithoutShipmentsInput, {nullable:true})
-    @Type(() => ArticleUpsertWithoutShipmentsInput)
-    upsert?: ArticleUpsertWithoutShipmentsInput;
+  @Field(() => ArticleWhereUniqueInput, { nullable: true })
+  @Type(() => ArticleWhereUniqueInput)
+  connect?: Prisma.AtLeast<ArticleWhereUniqueInput, 'id' | 'sku'>;
 
-    @Field(() => ArticleWhereUniqueInput, {nullable:true})
-    @Type(() => ArticleWhereUniqueInput)
-    connect?: Prisma.AtLeast<ArticleWhereUniqueInput, 'id' | 'sku'>;
-
-    @Field(() => ArticleUpdateToOneWithWhereWithoutShipmentsInput, {nullable:true})
-    @Type(() => ArticleUpdateToOneWithWhereWithoutShipmentsInput)
-    update?: ArticleUpdateToOneWithWhereWithoutShipmentsInput;
+  @Field(() => ArticleUpdateToOneWithWhereWithoutShipmentsInput, {
+    nullable: true,
+  })
+  @Type(() => ArticleUpdateToOneWithWhereWithoutShipmentsInput)
+  update?: ArticleUpdateToOneWithWhereWithoutShipmentsInput;
 }

@@ -12,44 +12,61 @@ import { ArticleOnShipmentScalarWhereInput } from './article-on-shipment-scalar-
 
 @InputType()
 export class ArticleOnShipmentUpdateManyWithoutShipmentNestedInput {
+  @Field(() => [ArticleOnShipmentCreateWithoutShipmentInput], {
+    nullable: true,
+  })
+  @Type(() => ArticleOnShipmentCreateWithoutShipmentInput)
+  create?: Array<ArticleOnShipmentCreateWithoutShipmentInput>;
 
-    @Field(() => [ArticleOnShipmentCreateWithoutShipmentInput], {nullable:true})
-    @Type(() => ArticleOnShipmentCreateWithoutShipmentInput)
-    create?: Array<ArticleOnShipmentCreateWithoutShipmentInput>;
+  @Field(() => [ArticleOnShipmentCreateOrConnectWithoutShipmentInput], {
+    nullable: true,
+  })
+  @Type(() => ArticleOnShipmentCreateOrConnectWithoutShipmentInput)
+  connectOrCreate?: Array<ArticleOnShipmentCreateOrConnectWithoutShipmentInput>;
 
-    @Field(() => [ArticleOnShipmentCreateOrConnectWithoutShipmentInput], {nullable:true})
-    @Type(() => ArticleOnShipmentCreateOrConnectWithoutShipmentInput)
-    connectOrCreate?: Array<ArticleOnShipmentCreateOrConnectWithoutShipmentInput>;
+  @Field(() => [ArticleOnShipmentUpsertWithWhereUniqueWithoutShipmentInput], {
+    nullable: true,
+  })
+  @Type(() => ArticleOnShipmentUpsertWithWhereUniqueWithoutShipmentInput)
+  upsert?: Array<ArticleOnShipmentUpsertWithWhereUniqueWithoutShipmentInput>;
 
-    @Field(() => [ArticleOnShipmentUpsertWithWhereUniqueWithoutShipmentInput], {nullable:true})
-    @Type(() => ArticleOnShipmentUpsertWithWhereUniqueWithoutShipmentInput)
-    upsert?: Array<ArticleOnShipmentUpsertWithWhereUniqueWithoutShipmentInput>;
+  @Field(() => [ArticleOnShipmentWhereUniqueInput], { nullable: true })
+  @Type(() => ArticleOnShipmentWhereUniqueInput)
+  set?: Array<
+    Prisma.AtLeast<ArticleOnShipmentWhereUniqueInput, 'articleId_shipmentId'>
+  >;
 
-    @Field(() => [ArticleOnShipmentWhereUniqueInput], {nullable:true})
-    @Type(() => ArticleOnShipmentWhereUniqueInput)
-    set?: Array<Prisma.AtLeast<ArticleOnShipmentWhereUniqueInput, 'articleId_shipmentId'>>;
+  @Field(() => [ArticleOnShipmentWhereUniqueInput], { nullable: true })
+  @Type(() => ArticleOnShipmentWhereUniqueInput)
+  disconnect?: Array<
+    Prisma.AtLeast<ArticleOnShipmentWhereUniqueInput, 'articleId_shipmentId'>
+  >;
 
-    @Field(() => [ArticleOnShipmentWhereUniqueInput], {nullable:true})
-    @Type(() => ArticleOnShipmentWhereUniqueInput)
-    disconnect?: Array<Prisma.AtLeast<ArticleOnShipmentWhereUniqueInput, 'articleId_shipmentId'>>;
+  @Field(() => [ArticleOnShipmentWhereUniqueInput], { nullable: true })
+  @Type(() => ArticleOnShipmentWhereUniqueInput)
+  delete?: Array<
+    Prisma.AtLeast<ArticleOnShipmentWhereUniqueInput, 'articleId_shipmentId'>
+  >;
 
-    @Field(() => [ArticleOnShipmentWhereUniqueInput], {nullable:true})
-    @Type(() => ArticleOnShipmentWhereUniqueInput)
-    delete?: Array<Prisma.AtLeast<ArticleOnShipmentWhereUniqueInput, 'articleId_shipmentId'>>;
+  @Field(() => [ArticleOnShipmentWhereUniqueInput], { nullable: true })
+  @Type(() => ArticleOnShipmentWhereUniqueInput)
+  connect?: Array<
+    Prisma.AtLeast<ArticleOnShipmentWhereUniqueInput, 'articleId_shipmentId'>
+  >;
 
-    @Field(() => [ArticleOnShipmentWhereUniqueInput], {nullable:true})
-    @Type(() => ArticleOnShipmentWhereUniqueInput)
-    connect?: Array<Prisma.AtLeast<ArticleOnShipmentWhereUniqueInput, 'articleId_shipmentId'>>;
+  @Field(() => [ArticleOnShipmentUpdateWithWhereUniqueWithoutShipmentInput], {
+    nullable: true,
+  })
+  @Type(() => ArticleOnShipmentUpdateWithWhereUniqueWithoutShipmentInput)
+  update?: Array<ArticleOnShipmentUpdateWithWhereUniqueWithoutShipmentInput>;
 
-    @Field(() => [ArticleOnShipmentUpdateWithWhereUniqueWithoutShipmentInput], {nullable:true})
-    @Type(() => ArticleOnShipmentUpdateWithWhereUniqueWithoutShipmentInput)
-    update?: Array<ArticleOnShipmentUpdateWithWhereUniqueWithoutShipmentInput>;
+  @Field(() => [ArticleOnShipmentUpdateManyWithWhereWithoutShipmentInput], {
+    nullable: true,
+  })
+  @Type(() => ArticleOnShipmentUpdateManyWithWhereWithoutShipmentInput)
+  updateMany?: Array<ArticleOnShipmentUpdateManyWithWhereWithoutShipmentInput>;
 
-    @Field(() => [ArticleOnShipmentUpdateManyWithWhereWithoutShipmentInput], {nullable:true})
-    @Type(() => ArticleOnShipmentUpdateManyWithWhereWithoutShipmentInput)
-    updateMany?: Array<ArticleOnShipmentUpdateManyWithWhereWithoutShipmentInput>;
-
-    @Field(() => [ArticleOnShipmentScalarWhereInput], {nullable:true})
-    @Type(() => ArticleOnShipmentScalarWhereInput)
-    deleteMany?: Array<ArticleOnShipmentScalarWhereInput>;
+  @Field(() => [ArticleOnShipmentScalarWhereInput], { nullable: true })
+  @Type(() => ArticleOnShipmentScalarWhereInput)
+  deleteMany?: Array<ArticleOnShipmentScalarWhereInput>;
 }

@@ -5,19 +5,20 @@ import { ShipmentCreateNestedManyWithoutSenderAddressInput } from '../shipment/s
 
 @InputType()
 export class AddressCreateWithoutReceiverShipmentsInput {
+  @Field(() => String, { nullable: true })
+  id?: string;
 
-    @Field(() => String, {nullable:true})
-    id?: string;
+  @Field(() => String, { nullable: false })
+  addressLine!: string;
 
-    @Field(() => String, {nullable:false})
-    addressLine!: string;
+  @Field(() => Int, { nullable: false })
+  postalCode!: number;
 
-    @Field(() => Int, {nullable:false})
-    postalCode!: number;
+  @Field(() => String, { nullable: false })
+  country!: string;
 
-    @Field(() => String, {nullable:false})
-    country!: string;
-
-    @Field(() => ShipmentCreateNestedManyWithoutSenderAddressInput, {nullable:true})
-    senderShipments?: ShipmentCreateNestedManyWithoutSenderAddressInput;
+  @Field(() => ShipmentCreateNestedManyWithoutSenderAddressInput, {
+    nullable: true,
+  })
+  senderShipments?: ShipmentCreateNestedManyWithoutSenderAddressInput;
 }

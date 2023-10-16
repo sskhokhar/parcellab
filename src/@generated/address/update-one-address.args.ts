@@ -7,12 +7,11 @@ import { AddressWhereUniqueInput } from './address-where-unique.input';
 
 @ArgsType()
 export class UpdateOneAddressArgs {
+  @Field(() => AddressUpdateInput, { nullable: false })
+  @Type(() => AddressUpdateInput)
+  data!: AddressUpdateInput;
 
-    @Field(() => AddressUpdateInput, {nullable:false})
-    @Type(() => AddressUpdateInput)
-    data!: AddressUpdateInput;
-
-    @Field(() => AddressWhereUniqueInput, {nullable:false})
-    @Type(() => AddressWhereUniqueInput)
-    where!: Prisma.AtLeast<AddressWhereUniqueInput, 'id'>;
+  @Field(() => AddressWhereUniqueInput, { nullable: false })
+  @Type(() => AddressWhereUniqueInput)
+  where!: Prisma.AtLeast<AddressWhereUniqueInput, 'id'>;
 }

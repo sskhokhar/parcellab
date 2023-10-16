@@ -3,7 +3,6 @@ import { InputType } from '@nestjs/graphql';
 
 @InputType()
 export class AddressAvgAggregateInput {
-
-    @Field(() => Boolean, {nullable:true})
-    postalCode?: true;
+  @Field(() => Boolean, { nullable: true })
+  postalCode?: true;
 }

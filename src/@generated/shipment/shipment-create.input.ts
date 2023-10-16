@@ -7,23 +7,28 @@ import { AddressCreateNestedOneWithoutReceiverShipmentsInput } from '../address/
 
 @InputType()
 export class ShipmentCreateInput {
+  @Field(() => String, { nullable: true })
+  id?: string;
 
-    @Field(() => String, {nullable:true})
-    id?: string;
+  @Field(() => String, { nullable: false })
+  trackingNumber!: string;
 
-    @Field(() => String, {nullable:false})
-    trackingNumber!: string;
+  @Field(() => String, { nullable: false })
+  carrier!: string;
 
-    @Field(() => String, {nullable:false})
-    carrier!: string;
+  @Field(() => ArticleOnShipmentCreateNestedManyWithoutShipmentInput, {
+    nullable: true,
+  })
+  @Type(() => ArticleOnShipmentCreateNestedManyWithoutShipmentInput)
+  articles?: ArticleOnShipmentCreateNestedManyWithoutShipmentInput;
 
-    @Field(() => ArticleOnShipmentCreateNestedManyWithoutShipmentInput, {nullable:true})
-    @Type(() => ArticleOnShipmentCreateNestedManyWithoutShipmentInput)
-    articles?: ArticleOnShipmentCreateNestedManyWithoutShipmentInput;
+  @Field(() => AddressCreateNestedOneWithoutSenderShipmentsInput, {
+    nullable: false,
+  })
+  senderAddress!: AddressCreateNestedOneWithoutSenderShipmentsInput;
 
-    @Field(() => AddressCreateNestedOneWithoutSenderShipmentsInput, {nullable:false})
-    senderAddress!: AddressCreateNestedOneWithoutSenderShipmentsInput;
-
-    @Field(() => AddressCreateNestedOneWithoutReceiverShipmentsInput, {nullable:false})
-    receiverAddress!: AddressCreateNestedOneWithoutReceiverShipmentsInput;
+  @Field(() => AddressCreateNestedOneWithoutReceiverShipmentsInput, {
+    nullable: false,
+  })
+  receiverAddress!: AddressCreateNestedOneWithoutReceiverShipmentsInput;
 }

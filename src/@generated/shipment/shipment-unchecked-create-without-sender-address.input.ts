@@ -5,20 +5,21 @@ import { Type } from 'class-transformer';
 
 @InputType()
 export class ShipmentUncheckedCreateWithoutSenderAddressInput {
+  @Field(() => String, { nullable: true })
+  id?: string;
 
-    @Field(() => String, {nullable:true})
-    id?: string;
+  @Field(() => String, { nullable: false })
+  trackingNumber!: string;
 
-    @Field(() => String, {nullable:false})
-    trackingNumber!: string;
+  @Field(() => String, { nullable: false })
+  carrier!: string;
 
-    @Field(() => String, {nullable:false})
-    carrier!: string;
+  @Field(() => String, { nullable: false })
+  receiverAddressId!: string;
 
-    @Field(() => String, {nullable:false})
-    receiverAddressId!: string;
-
-    @Field(() => ArticleOnShipmentUncheckedCreateNestedManyWithoutShipmentInput, {nullable:true})
-    @Type(() => ArticleOnShipmentUncheckedCreateNestedManyWithoutShipmentInput)
-    articles?: ArticleOnShipmentUncheckedCreateNestedManyWithoutShipmentInput;
+  @Field(() => ArticleOnShipmentUncheckedCreateNestedManyWithoutShipmentInput, {
+    nullable: true,
+  })
+  @Type(() => ArticleOnShipmentUncheckedCreateNestedManyWithoutShipmentInput)
+  articles?: ArticleOnShipmentUncheckedCreateNestedManyWithoutShipmentInput;
 }

@@ -7,12 +7,11 @@ import { ShipmentWhereUniqueInput } from './shipment-where-unique.input';
 
 @ArgsType()
 export class UpdateOneShipmentArgs {
+  @Field(() => ShipmentUpdateInput, { nullable: false })
+  @Type(() => ShipmentUpdateInput)
+  data!: ShipmentUpdateInput;
 
-    @Field(() => ShipmentUpdateInput, {nullable:false})
-    @Type(() => ShipmentUpdateInput)
-    data!: ShipmentUpdateInput;
-
-    @Field(() => ShipmentWhereUniqueInput, {nullable:false})
-    @Type(() => ShipmentWhereUniqueInput)
-    where!: Prisma.AtLeast<ShipmentWhereUniqueInput, 'id' | 'trackingNumber'>;
+  @Field(() => ShipmentWhereUniqueInput, { nullable: false })
+  @Type(() => ShipmentWhereUniqueInput)
+  where!: Prisma.AtLeast<ShipmentWhereUniqueInput, 'id' | 'trackingNumber'>;
 }

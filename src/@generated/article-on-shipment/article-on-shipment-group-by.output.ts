@@ -6,19 +6,18 @@ import { ArticleOnShipmentMaxAggregate } from './article-on-shipment-max-aggrega
 
 @ObjectType()
 export class ArticleOnShipmentGroupBy {
+  @Field(() => String, { nullable: false })
+  articleId!: string;
 
-    @Field(() => String, {nullable:false})
-    articleId!: string;
+  @Field(() => String, { nullable: false })
+  shipmentId!: string;
 
-    @Field(() => String, {nullable:false})
-    shipmentId!: string;
+  @Field(() => ArticleOnShipmentCountAggregate, { nullable: true })
+  _count?: ArticleOnShipmentCountAggregate;
 
-    @Field(() => ArticleOnShipmentCountAggregate, {nullable:true})
-    _count?: ArticleOnShipmentCountAggregate;
+  @Field(() => ArticleOnShipmentMinAggregate, { nullable: true })
+  _min?: ArticleOnShipmentMinAggregate;
 
-    @Field(() => ArticleOnShipmentMinAggregate, {nullable:true})
-    _min?: ArticleOnShipmentMinAggregate;
-
-    @Field(() => ArticleOnShipmentMaxAggregate, {nullable:true})
-    _max?: ArticleOnShipmentMaxAggregate;
+  @Field(() => ArticleOnShipmentMaxAggregate, { nullable: true })
+  _max?: ArticleOnShipmentMaxAggregate;
 }

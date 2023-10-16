@@ -7,12 +7,14 @@ import { ArticleOnShipmentUpdateWithoutShipmentInput } from './article-on-shipme
 
 @InputType()
 export class ArticleOnShipmentUpdateWithWhereUniqueWithoutShipmentInput {
+  @Field(() => ArticleOnShipmentWhereUniqueInput, { nullable: false })
+  @Type(() => ArticleOnShipmentWhereUniqueInput)
+  where!: Prisma.AtLeast<
+    ArticleOnShipmentWhereUniqueInput,
+    'articleId_shipmentId'
+  >;
 
-    @Field(() => ArticleOnShipmentWhereUniqueInput, {nullable:false})
-    @Type(() => ArticleOnShipmentWhereUniqueInput)
-    where!: Prisma.AtLeast<ArticleOnShipmentWhereUniqueInput, 'articleId_shipmentId'>;
-
-    @Field(() => ArticleOnShipmentUpdateWithoutShipmentInput, {nullable:false})
-    @Type(() => ArticleOnShipmentUpdateWithoutShipmentInput)
-    data!: ArticleOnShipmentUpdateWithoutShipmentInput;
+  @Field(() => ArticleOnShipmentUpdateWithoutShipmentInput, { nullable: false })
+  @Type(() => ArticleOnShipmentUpdateWithoutShipmentInput)
+  data!: ArticleOnShipmentUpdateWithoutShipmentInput;
 }

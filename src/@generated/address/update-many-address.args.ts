@@ -6,12 +6,11 @@ import { AddressWhereInput } from './address-where.input';
 
 @ArgsType()
 export class UpdateManyAddressArgs {
+  @Field(() => AddressUpdateManyMutationInput, { nullable: false })
+  @Type(() => AddressUpdateManyMutationInput)
+  data!: AddressUpdateManyMutationInput;
 
-    @Field(() => AddressUpdateManyMutationInput, {nullable:false})
-    @Type(() => AddressUpdateManyMutationInput)
-    data!: AddressUpdateManyMutationInput;
-
-    @Field(() => AddressWhereInput, {nullable:true})
-    @Type(() => AddressWhereInput)
-    where?: AddressWhereInput;
+  @Field(() => AddressWhereInput, { nullable: true })
+  @Type(() => AddressWhereInput)
+  where?: AddressWhereInput;
 }
