@@ -1,0 +1,265 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type ArticleCount {
+  shipments: Int!
+}
+
+type Article {
+  id: ID!
+  name: String!
+  qty: Int!
+  price: Decimal!
+  sku: String!
+  shipments: [ArticleOnShipment!]
+  _count: ArticleCount!
+}
+
+"""An arbitrary-precision Decimal type"""
+scalar Decimal
+
+type AddressCount {
+  receiverShipments: Int!
+  senderShipments: Int!
+}
+
+type Address {
+  id: ID!
+  addressLine: String!
+  postalCode: Int!
+  country: String!
+  receiverShipments: [Shipment!]
+  senderShipments: [Shipment!]
+  _count: AddressCount!
+}
+
+type ShipmentCount {
+  articles: Int!
+}
+
+type Shipment {
+  id: ID!
+  trackingNumber: String!
+  carrier: String!
+  senderAddressId: String!
+  receiverAddressId: String!
+  articles: [ArticleOnShipment!]
+  senderAddress: Address!
+  receiverAddress: Address!
+  _count: ShipmentCount!
+  weather: String!
+}
+
+type ArticleOnShipment {
+  articleId: String!
+  shipmentId: String!
+  article: Article!
+  shipment: Shipment!
+}
+
+type Query {
+  shipments(where: ShipmentWhereInput, orderBy: [ShipmentOrderByWithRelationInput!], cursor: ShipmentWhereUniqueInput, take: Int, skip: Int, distinct: [ShipmentScalarFieldEnum!]): [Shipment!]!
+}
+
+input ShipmentWhereInput {
+  AND: [ShipmentWhereInput!]
+  OR: [ShipmentWhereInput!]
+  NOT: [ShipmentWhereInput!]
+  id: StringFilter
+  trackingNumber: StringFilter
+  carrier: StringFilter
+  senderAddressId: StringFilter
+  receiverAddressId: StringFilter
+  articles: ArticleOnShipmentListRelationFilter
+  senderAddress: AddressRelationFilter
+  receiverAddress: AddressRelationFilter
+}
+
+input StringFilter {
+  equals: String
+  in: [String!]
+  notIn: [String!]
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  contains: String
+  startsWith: String
+  endsWith: String
+  not: NestedStringFilter
+}
+
+input NestedStringFilter {
+  equals: String
+  in: [String!]
+  notIn: [String!]
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  contains: String
+  startsWith: String
+  endsWith: String
+  not: NestedStringFilter
+}
+
+input ArticleOnShipmentListRelationFilter {
+  every: ArticleOnShipmentWhereInput
+  some: ArticleOnShipmentWhereInput
+  none: ArticleOnShipmentWhereInput
+}
+
+input ArticleOnShipmentWhereInput {
+  AND: [ArticleOnShipmentWhereInput!]
+  OR: [ArticleOnShipmentWhereInput!]
+  NOT: [ArticleOnShipmentWhereInput!]
+  articleId: StringFilter
+  shipmentId: StringFilter
+  article: ArticleRelationFilter
+  shipment: ShipmentRelationFilter
+}
+
+input ArticleRelationFilter {
+  is: ArticleWhereInput
+  isNot: ArticleWhereInput
+}
+
+input ArticleWhereInput {
+  AND: [ArticleWhereInput!]
+  OR: [ArticleWhereInput!]
+  NOT: [ArticleWhereInput!]
+  id: StringFilter
+  name: StringFilter
+  qty: IntFilter
+  price: DecimalFilter
+  sku: StringFilter
+  shipments: ArticleOnShipmentListRelationFilter
+}
+
+input IntFilter {
+  equals: Int
+  in: [Int!]
+  notIn: [Int!]
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  not: NestedIntFilter
+}
+
+input NestedIntFilter {
+  equals: Int
+  in: [Int!]
+  notIn: [Int!]
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  not: NestedIntFilter
+}
+
+input DecimalFilter {
+  equals: Decimal
+  in: [Decimal!]
+  notIn: [Decimal!]
+  lt: Decimal
+  lte: Decimal
+  gt: Decimal
+  gte: Decimal
+  not: NestedDecimalFilter
+}
+
+input NestedDecimalFilter {
+  equals: Decimal
+  in: [Decimal!]
+  notIn: [Decimal!]
+  lt: Decimal
+  lte: Decimal
+  gt: Decimal
+  gte: Decimal
+  not: NestedDecimalFilter
+}
+
+input ShipmentRelationFilter {
+  is: ShipmentWhereInput
+  isNot: ShipmentWhereInput
+}
+
+input AddressRelationFilter {
+  is: AddressWhereInput
+  isNot: AddressWhereInput
+}
+
+input AddressWhereInput {
+  AND: [AddressWhereInput!]
+  OR: [AddressWhereInput!]
+  NOT: [AddressWhereInput!]
+  id: StringFilter
+  addressLine: StringFilter
+  postalCode: IntFilter
+  country: StringFilter
+  receiverShipments: ShipmentListRelationFilter
+  senderShipments: ShipmentListRelationFilter
+}
+
+input ShipmentListRelationFilter {
+  every: ShipmentWhereInput
+  some: ShipmentWhereInput
+  none: ShipmentWhereInput
+}
+
+input ShipmentOrderByWithRelationInput {
+  id: SortOrder
+  trackingNumber: SortOrder
+  carrier: SortOrder
+  senderAddressId: SortOrder
+  receiverAddressId: SortOrder
+  articles: ArticleOnShipmentOrderByRelationAggregateInput
+  senderAddress: AddressOrderByWithRelationInput
+  receiverAddress: AddressOrderByWithRelationInput
+}
+
+enum SortOrder {
+  asc
+  desc
+}
+
+input ArticleOnShipmentOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input AddressOrderByWithRelationInput {
+  id: SortOrder
+  addressLine: SortOrder
+  postalCode: SortOrder
+  country: SortOrder
+  receiverShipments: ShipmentOrderByRelationAggregateInput
+  senderShipments: ShipmentOrderByRelationAggregateInput
+}
+
+input ShipmentOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input ShipmentWhereUniqueInput {
+  id: String
+  trackingNumber: String
+  AND: [ShipmentWhereInput!]
+  OR: [ShipmentWhereInput!]
+  NOT: [ShipmentWhereInput!]
+  carrier: StringFilter
+  senderAddressId: StringFilter
+  receiverAddressId: StringFilter
+  articles: ArticleOnShipmentListRelationFilter
+  senderAddress: AddressRelationFilter
+  receiverAddress: AddressRelationFilter
+}
+
+enum ShipmentScalarFieldEnum {
+  id
+  trackingNumber
+  carrier
+  senderAddressId
+  receiverAddressId
+}
